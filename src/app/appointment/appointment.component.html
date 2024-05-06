@@ -1,0 +1,108 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="containerfluid imgcontainer">
+Schedule Your Appointment
+</div>
+
+<!-- <div class="popup" id="popup" [style.display]="showPopup ? 'block' : 'none'">
+    <div class="popup-content">
+        <span class="close" (click)="ClosePopUp()" >&times;</span>
+        <p id="popup-message">{{notificationMessage}}</p>
+    </div>
+</div> -->
+
+<div class="container divsmaincontainer">
+
+    <form #AppointmentDataGet="ngForm" (submit)="Appointmentsubmit(AppointmentDataGet.value)">
+        <div class="container maincontainer">
+            <h2>Book an Appointment >>> </h2>
+            <div class="formscontainer">
+
+                <div class="formgroup01">
+                    <div class="form-floating" style="width: 400px;">
+                        <input type="text" class="form-control" id="FirstName" name="FirstName" required
+                            placeholder="Jhon" name="FirstName" #FirstName="ngModel" ngModel="{{Inputitem?.FirstName}}">
+                        <label for="firstName">First Name</label>
+                    </div>
+
+                    <div class="form-floating" style="width: 400px;">
+                        <input type="text" class="form-control" id="LastName" name="LastName" required placeholder="Deo"
+                            name="LastName" #LastName="ngModel" ngModel="{{Inputitem?.LastName}}">
+                        <label for="LastName">Last Name</label>
+                    </div>
+
+                    <div class="form-floating" style="width: 400px;">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            name="Emailid" required name="Email" #Email="ngModel" ngModel="{{Inputitem?.Email}}">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                </div>
+
+                <div class="formgroup01">
+                    <div class="form-floating" style="width: 400px;">
+                        <input type="number" class="form-control" id="PhoneNumber" placeholder="+91 00000 00000"
+                            name="PhoneNumber" required name="Phone" inputmode="numeric" #Phone="ngModel"
+                            ngModel="{{Inputitem?.Phone}}">
+                        <label for="PhoneNumber">Phone Number</label>
+                    </div>
+
+                    <div class="form-floating" style="width: 400px;" (change)="ChangeTheBtn1()">
+                        <input type="date" class="form-control" id="PreferredDate" required name="date" #date="ngModel"
+                            ngModel>
+                        <label for="date">Preferred Date</label>
+                    </div>
+
+                    <div class="form-floating" style="width: 400px;" (change)="ChangeTheBtn1()">
+                        <input type="time" class="form-control" id="AppointmentTime" required name="time"
+                            #time="ngModel" ngModel>
+                        <label for="AppointmentTime">Preferred Time</label>
+                    </div>
+
+                </div>
+
+                <div class="formgroup01">
+
+                    <div class="form-floating" style="width: 400px;">
+                        <select class="form-select" id="ServiceType" required name="ServiceType"
+                            #AppointmentService="ngModel" ngModel>
+                            <option value="Fitting">Fitting</option>
+                            <option value="Alteration">Alteration</option>
+                            <option value="Sweing Dress">Sweing Dress</option>
+                        </select>
+                        <label for="ServiceType">Service Type</label>
+                    </div>
+
+                    <div class="form-floating" style="width: 850px;">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                            name="CommentRequest" #CommentRequest="ngModel" ngModel></textarea>
+                        <label for="floatingTextarea">Special Requests</label>
+                    </div>
+                </div>
+
+                <div class="formgroup01">
+
+                    <div class="form-floating" style="width: 400px;">
+                        <select class="form-select" id="ServiceType2" required name="SelectedTailor"
+                            #SelectedTailor='ngModel' ngModel (change)="ChangeTheBtn1()">
+                            <option *ngFor="let tailor of SelectTailor" [value]="tailor._id">{{tailor.TailorName}}
+                            </option>
+                        </select>
+                        <label for="ServiceType2">Select Tailor</label>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto" *ngIf="ShowHideCheck">
+                    <input class="btn btn-outline-success"
+                        (click)="CheckAvailability(SelectedTailor.value, date.value, time.value )"
+                        value="Check Availability">
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto" *ngIf="ShowHideBook">
+                    <input class="btn btn-outline-success" type="submit" value="Book Appointment">
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+<app-footer></app-footer>

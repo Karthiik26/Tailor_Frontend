@@ -1,0 +1,10 @@
+.modalflexingitem{
+    position: relative;
+    top: 700px;
+    right: -550px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

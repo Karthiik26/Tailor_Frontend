@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+body::-webkit-scrollbar {
+    width: 6px;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(42, 42, 44, 0.89);
+  border-radius: 50px;
+  outline: 1px solid rgb(219, 221, 224);
+}
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+/* html, body { height: 100%; } */
+body { margin: 0; width: auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.colored-toast.swal2-toast {
+  margin-top: 65px; /* Adjust the margin as needed */
+  box-shadow: 50px 10px 10px black;
+}
+.colored-toast-2.swal2-toast {
+  margin-top: 0px; /* Adjust the margin as needed */
+  box-shadow: 50px 10px 10px black;
+}
+@keyframes toastFadeOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.swal2-hide.swal2-toast {
+  animation: toastFadeOut 0.5s ease forwards;
+}

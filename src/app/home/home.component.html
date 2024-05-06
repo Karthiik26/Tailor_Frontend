@@ -1,0 +1,157 @@
+<app-nav-bar></app-nav-bar>
+
+<!-- 1st container -->
+<div class="" id="Title-Discription">
+
+    <div class="wrapper">
+        <div>
+            <span style="color: transparent;">-</span>
+            <span class="typed-text"></span>
+            <span class="cursor"></span>
+        </div>
+    </div>
+
+
+    <div class="maintext" style="font-weight: 700;letter-spacing: 2px;">
+        "Discover a world of bespoke elegance at DARJEE WEB. Our web application redefines
+        tailoring, offering personalized fashion experiences that capture your individuality. Elevate your style
+        effortlessly - start stitching your story today!"
+    </div>
+
+    <!-- <div class="heading">
+        <p id="explore">Explore Your Fashion From Here.......</p>
+    </div>
+
+    <form>
+        <div class="input-group mb-3" id="search-container">
+            <input type="text" id="searchinp" class="form-control" placeholder="Search For Designs........"
+                aria-label="Recipient's username" aria-describedby="button-addon2"
+                style="width: 30px; padding-left: 15px; ">
+            <button class="btn material-symbols-outlined" id="button-addon2" style="font-size: 24px;"
+                type="submit">search</button>
+        </div>
+    </form> -->
+
+</div>
+
+<!-- 7th container -->
+<h2 class="cont-07-header text-center">
+    Explore Our
+    Technology</h2>
+
+<div class="container-fluid" id="container-07">
+    <div id="side-01">
+        <div class="btn-txt">
+            <h3 class="content-appointment">
+                <div class="content-appointment-2">
+                    <span>
+                        Dear Customers,
+                    </span>
+                    <br>
+                    Seamlessly schedule your style with our bespoke appointment option, where precision meets
+                    convenience in
+                    every stitch of web development.
+                    <br>
+                    We're thrilled to introduce our new appointment scheduling feature! Now, you can book appointments
+                    at
+                    your preferred time or based on your chosen tailor's availability. Enjoy hassle-free scheduling and
+                    personalized service.
+                    <br>
+                    <h3> Try it now for a seamless experience!! </h3>
+                </div>
+            </h3>
+            <div style="width: 20%;display: flex;justify-content: center;align-items: center;margin: auto;">
+                <button class="btn btn-warning p-2" (click)="MakeAppointment()">Make Appointment</button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="border"></div> -->
+    <!-- <div id="side-02">
+        <div class="btn-txt">
+            <h3>
+                "Empower your online presence with precision and style - where every pixel is a bespoke measurement in
+                our tailor-made web development."
+            </h3>
+            <button class="btn btn-warning p-2">Give Measurement</button>
+        </div>
+    </div> -->
+</div>
+
+
+<!-- 3rd container -->
+<h2 class="text-center toptailor "> Our Top Tailors
+    With Specialist
+</h2>
+<!-- 2nd Container -->
+<div class="container w-100" id="container-02" style=" margin-bottom: 0px;">
+    <div class="content-inside-maintxt" style="font-weight: 600;">
+        <div class="content-tailors">
+            appointment scheduling with our top tailor specialists!
+            <br>
+            Whether you're seeking bespoke suits, intricate embroidery, or expert alterations, our
+            specialists are here to cater to your needs. Book appointments effortlessly according to your schedule or
+            their availability. Experience personalized service at its finest.
+            <br>
+            Try it out today for a truly exceptional tailoring experience!
+        </div>
+    </div>
+</div>
+ 
+<div class="container-fluid w-100" id="container-03">
+    <div class="container" *ngIf="Tailor">
+        <div class="circle circle-01">
+            <img [src]="getImageSource2(Tailor[3].TailorImage)" alt="" style="border: 1px solid" routerLink="/TailorVeiw" (click)="GettingTailor(Tailor[3]._id)" >
+            <h6 style="margin-top: 20px; font-size: 22px; font-weight: 600;;">{{Tailor[3].TailorName}}</h6>
+        </div>
+        <div class="circle circle-02">
+            <img [src]="getImageSource2(Tailor[6].TailorImage)" alt="" style="border: 1px solid" routerLink="/TailorVeiw" (click)="GettingTailor(Tailor[6]._id)" >
+            <h6 style="margin-top: 20px; font-size: 22px; font-weight: 600;;">{{Tailor[6].TailorName}}</h6>
+        </div>
+        <div class="circle circle-03">
+            <img [src]="getImageSource2(Tailor[9].TailorImage)" alt="" style="border: 1px solid" routerLink="/TailorVeiw" (click)="GettingTailor(Tailor[9]._id)" >
+            <h6 style="margin-top: 20px; font-size: 22px; font-weight: 600;;">{{Tailor[9].TailorName}}</h6>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- 4th container -->
+<!-- 5th container -->
+<h2 class="text-center topdesigns" style="">Top Designs
+</h2>
+<div class="container w-100" id="container-02" style=" margin-bottom: 0px;">
+    <div class="content-inside-maintxt" style="font-weight: 600;">
+        <div class="content-Cloths">
+
+            <!-- Exciting news! Our website now offers an advanced feature for purchasing fabrics by the meter.  -->
+            <!-- <br> -->
+            Explore our wide selection of unique designs and new cloth types conveniently from the comfort of your home.
+            Whether you're
+            looking for trendy prints, luxurious textures, or specialty fabrics, we've got you covered. Shop hassle-free
+            and
+            customize your orders according to your needs. Experience the ease of buying quality fabrics online.
+            <br>Explore our collection today for a seamless shopping experience!
+        </div>
+    </div>
+</div>
+<div class="container-fluid w-100 " id="container-05">
+    <div class="flex-container" #imageContainer>
+        <!-- main content -->
+        <div class="overflowing">
+            <!-- item 01 -->
+            <div class="boxing-01" *ngFor="let data of ClothAdda.slice(0, 11)">
+                <img (click)="GettingId(data.ClothId)" [src]="getImageSource(data.ClothImge)" alt="img" width="230px">
+                <div class="text-cont">
+                    <h5 style="padding: 5px;font-weight: 500; ">{{data.ClothName}}</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,274 @@
+<app-nav-bar></app-nav-bar>
+
+<!-- progress bar -->
+<div class="container progressbar">
+    <div style="display: flex;flex-direction: column;justify-content: center;">
+        <button id="ButtonProgress1" (click)="ProgressSteper1()">1</button>
+        <label class="btnprog1" for="ButtonProgress1">Step 1</label>
+    </div>
+
+    <div style="display: flex;flex-direction: column;justify-content: center;    margin-top: -30px;">
+        <div class="line"></div>
+    </div>
+
+    <!-- <div style="display: flex;flex-direction: column;justify-content: center;">
+        <button id="ButtonProgress2" (click)="ProgressSteper2()">2</button>
+        <label for="ButtonProgress2">Step 2</label>
+    </div> -->
+
+    <div style="display: flex;flex-direction: column;justify-content: center;    margin-top: -30px;">
+        <div class="line"></div>
+    </div>
+
+    <div style="display: flex;flex-direction: column;justify-content: center;">
+        <button id="ButtonProgress3" (click)="ProgressSteper3()">2</button>
+        <label class="btnprog1" for="ButtonProgress3">Step 2</label>
+    </div>
+</div>
+
+<!-- Adress Displaying -->
+<div class="container" *ngIf="AdressConfirm01">
+    <div class="container">
+
+        <h1>Add Your Address</h1>
+
+        <div class="row">
+
+            <div class="col-md-4 col-lg-4 col-sm-4" *ngFor="let data of Address">
+                <label style="width: 24rem;">
+                    <input type="radio" name="product" class="card-input-element" />
+
+                    <div class="card card-default card-input">
+                        <!-- <div class="card-header">Your Address</div> -->
+                        <div class="card-body">
+                            {{data.Address1}} <br>
+                            {{data.Address2}} <br>
+                            {{data.Pincode}}
+                            {{data.City}} <br>
+                            {{data.State}}
+                        </div>
+                        <hr>
+                        <div class="buttons" id="Buttonmain">
+                            <button class="btn btn-warning" (click)="GotoPaymentOption(data.AddressId)">Deliver To This
+                                Address</button>
+                            <!-- Button trigger modal -->
+                            <div style="display: flex; gap: 30px; ">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop" (click)="GettingEditId(data.AddressId)">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-danger" (click)="DeleteAddress(data)">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4" style="margin-left: 10px;  margin-top: 5px;display: flex; justify-content: center; align-items: center;">
+                <label style="width: 24rem;">
+                    <div class="card card-default card-input">
+                        <button routerLink="/UsersAddress"
+                            style="background-color: transparent; display: flex;justify-content: center;padding-top: 100px;padding-bottom: 100px;font-size: 26px;">
+                            <span style="font-size: 50px;margin-top: -5px;" class="material-symbols-outlined">add</span>
+                            Add Your Address
+                        </button>
+                    </div>
+                </label>
+            </div>
+
+
+        </div>
+        <!-- <div style="margin-top: 50px;">
+            <div class="d-flex  m-auto" style="float: right;">
+                <button class="btn btn-info" style="padding-left: 100px;padding-right: 100px;font-size: 20px;"
+                    (click)="AddressNextBtn()">Next</button>
+            </div>
+        </div> -->
+    </div>
+
+</div>
+
+<!-- Displaying Options of Checkout And Summary -->
+<div class="container"  *ngIf="DetailConfirm03">
+    <h2 class="text-center" style="font-weight: 600;letter-spacing: 2px;">
+        Confirm & Place Your Order</h2>
+    <div class="container"
+        style="width: 64%; height: 50%;float: left;border-right: 1px dashed grey; padding-right: 55px;">
+        <div class="GettingDate">
+            <div class="item1">{{DeliveryDate.day}}</div>
+            <div class="item2">Free Delivery</div>
+        </div>
+        <hr>
+        <div class="DeliveryGuaranted">
+            <div>Estimated Delivery : {{DeliveryDate.date}}</div>
+        </div>
+        <hr>
+
+        <div class="MainBox1">
+            <div class="flexingProduct" *ngFor="let data of FetchingCartItems">
+                <div class="imagesizing">
+                    <img [src]="getImageSource(data.ClothImge)" alt="">
+                </div>
+                <div class="aboutproductdetails">
+                    <div class="titleheading">
+                        {{data.ClothName}}
+                    </div>
+                    <div class="aboutOrder">
+                        {{data.ClothAbout}}
+                    </div>
+                    <div style="font-size: 22px;font-weight: 500; padding: 5px 0px;">No Of Quantity :-
+                        {{data.ClothQuantityUser}}</div>
+                    <div class="pricing">Rs : {{data.ClothTotalWithQuaPrice}} </div>
+                </div>
+            </div>
+
+            <div style="float: left;margin-top: 60px;margin-bottom: 50px;">
+                <button class="btn btn-danger" style="padding-left: 50px;padding-right: 50px;font-size: 18px;"
+                    (click)="ConfirmOrderPrev()">Prev</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="container" style="width: 35%; height:auto ;float: right;padding-bottom: 50px;">
+
+        <div style="width: auto;height: 80px;"></div>
+
+        <div class="SideBox1">
+            <div class="shippingDetails">
+                <span class="Item1"> Shipping Details :- </span><span class="Item2">{{UsersLastName | titlecase }} &nbsp;{{UsersFirstName | titlecase}}</span>
+            </div>
+            <hr>
+            <div class="totalbill">
+                <div class="itemsrow1"> <br>
+                    <span>Item Total :</span> <br>
+                    <span>Tax :</span> <br>
+                    <span>Delivery :-</span>
+                    <br>
+                    <span class="BiggerText">Order Total :-</span>
+                </div>
+                <div class="itemsrow2" *ngIf="GettingTotal"> <br>
+                    <span>{{GettingTotal.TotalPriceOfCart.subtotalPrice}}</span> <br>
+                    <span>{{GettingTotal.TotalPriceOfCart.tax}}</span> <br>
+                    <span>0.00</span> <br>
+                    <span class="BiggerText">{{GettingTotal.TotalPriceOfCart.grandTotal}}</span>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+
+        <!-- payment Option -->
+        <!-- <div class="container" style=" box-shadow: 0px 1px 5px gray; width: auto;">
+            <div style="font-size: 18px;margin-top: 30px; font-weight: 500;letter-spacing: 1.5px;padding: 10px 15px;">
+                Pay On Delivery (Cash / Card)
+            </div>
+        </div> -->
+
+        <!-- deliver to option -->
+        <div class="deliverto">
+            <hr>
+            <span class="item1">Deliver To :-</span> <br> <br>
+            <span class="item2">{{UsersLastName | titlecase }} &nbsp;{{UsersFirstName | titlecase}}</span> <br>
+            <div class="item3">{{GettingAddressCheckout.Address1}}</div>
+            <div class="item3">{{GettingAddressCheckout.Address2}}</div>
+            <div class="item3">{{GettingAddressCheckout.City}} {{GettingAddressCheckout.State}}
+                {{GettingAddressCheckout.Pincode}}</div>
+            <hr>
+        </div>
+
+        <!-- place order button -->
+        <div class="container">
+            <button (click)="createRazpayOrder()" class="btn btn-warning placeurorder">Place Your Order</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- updating address -->
+<!-- Modal -->
+<form class="row g-3" #AddressForm="ngForm" (ngSubmit)="AdressUpdateForm(AddressForm.value)">
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top: 200px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Your Address</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container" *ngIf="GettingAddres">
+
+                        <div class="d-flex justify-content-center m-auto">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="PhoneNumber1" placeholder="Phone Number"
+                                    name="Phone" #Phone="ngModel" ngModel="{{userphone}}" required readonly>
+                                <label for="PhoneNumber1">Phone Number</label>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="PhoneNumber2"
+                                    placeholder="Phone Number 2 (Optional)" name="Phone2" #Phone2="ngModel"
+                                    ngModel="{{GettingAddres?.Phone2}}">
+                                <label for="PhoneNumber2" class="form-label">Phone Number 2 (Optional) </label>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center m-auto">
+
+                            <div class="form-floating mt-3">
+                                <input type="text" class="form-control" id="inputAddress1"
+                                    placeholder="H No / Flat No - 5001 , Main St" name="Address1" #Address1="ngModel"
+                                    ngModel="{{GettingAddres?.Address1}}" required>
+                                <label for="inputAddress1" class="form-label">Address</label>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+                            <div class="form-floating mt-3">
+                                <input type="text" class="form-control" id="inputAddresson2"
+                                    placeholder="Apartment, studio, or floor" name="Address2" #Address2="ngModel"
+                                    ngModel="{{GettingAddres?.Address2}}" required>
+                                <label for="inputAddresson2" class="form-label">Address 2</label>
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex justify-content-center m-auto">
+                            <div class="form-floating mt-3">
+                                <input type="text" id="pincode" #Pincode="ngModel" name="Pincode"
+                                    ngModel="{{GettingAddres?.Pincode}}" required formcontrolname="pincode"
+                                    class="form-control ng-untouched ng-pristine ng-invalid">
+                                <label for="pincode" class="form-label">Pin Code</label>
+                            </div>
+                            &nbsp;&nbsp;
+                            <div class="form-floating mt-3">
+                                <input type="text" id="inputCity" formcontrolname="city"
+                                    class="form-control ng-untouched ng-pristine ng-invalid" name="City" #City="ngModel"
+                                    ngModel="{{GettingAddres?.City}}">
+                                <label for="inputCity" class="form-label">City</label>
+                            </div>
+                            &nbsp;&nbsp;
+                            <div class="col-md-4 form-floating mt-3">
+                                <input type="text" id="inputState" formcontrolname="state"
+                                    class="form-control ng-untouched ng-pristine ng-invalid" name="State"
+                                    #State="ngModel" ngModel="{{GettingAddres?.State}}">
+                                <label for="inputState" class="form-label">State</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

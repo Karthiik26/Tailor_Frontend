@@ -1,0 +1,22 @@
+<div class="container container-main ">
+    <div class="container inside-cont">
+        <h2 style="font-size: 28px; font-weight: 800;letter-spacing: 1.5px;margin-bottom: 20px;">Admin Login</h2>
+        <h2 style="font-size: 18px; font-weight: 800;letter-spacing: 1.5px;margin-bottom: 20px;">{{Loginmsg}}</h2>
+        
+        <form #AdminFormData="ngForm" (ngSubmit)="AdminSubmit()">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                    name="AdminEmail" #AdminEmail="ngModel" [(ngModel)]="formData.AdminEmail" >
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                    name="AdminPassword" #AdminPassword="ngModel" [(ngModel)]="formData.AdminPassword" >
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                <button class="btn btn-primary fs-5" type="submit">Login > ></button>
+            </div>
+        </form>
+    </div>
+</div>

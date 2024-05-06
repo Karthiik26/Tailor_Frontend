@@ -1,0 +1,14 @@
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.modalflexingitem{
+    margin-top: 200px;
+}
+form {
+    padding: 50px 40px;
+}

@@ -1,0 +1,48 @@
+<app-tailor-nav></app-tailor-nav>
+
+<div class="container">
+    <h2 class="text-center" style="font-size: 32px; font-weight: 700; margin-top: 20px;">Update Your Design</h2>
+</div>
+
+<div class="container container-main">
+    <form>
+        <div class="mb-3 txting">
+            <label for="formFile" class="form-label"></label>
+            <input class="form-control-lg" type="file" id="formFile">
+        </div>
+        <div class="form-floating mb-3 txting">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">About Your Design</label>
+        </div>
+        <div class="form-floating mb-3 txting">
+            <input type="text" class="form-control " id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Designer Name</label>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-success fs-5" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                POST YOUR DESIGN
+            </button>
+            <button class="btn btn-outline-primary fs-5" type="button" routerLink="/TailorDetails">Show All
+                Designs</button>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalflexingitem">
+        <div class="modal-content changingbg">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color: green;" id="exampleModalLabel">Your Product Was SuccessFully
+                    Updated</h5>
+                <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- <div class="modal-body" style="color: green;" >
+          Go To Inventry 
+        </div> -->
+            <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
+        </div>
+    </div>
+</div>

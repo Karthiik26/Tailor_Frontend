@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div id="BGimage" >
+    Get Your Perfect Tailor From Here...
+</div>
+
+<!-- text-align: left;padding-top: 70px;padding-left: 50px; font-size: 35px;font-weight: 800; -->
+
+<!-- <div class="container" style="justify-content: center;margin: auto;display: flex; ">
+    <div class="input-group mt-4 mb-3" style="width: 50%;">
+        <input type="text" class="form-control" placeholder="Search For Tailors" aria-label="Search For Tailors"
+            aria-describedby="button-addon2" style="font-size: 20px;">
+        <button class="btn btn-outline-primary text-center" type="button" id="button-addon2">
+            <span class="material-symbols-outlined p-1 fs-3">
+                search
+            </span>
+        </button>
+    </div>
+</div> -->
+
+<div class="container mt-5 mb-5" >
+    <div class="text-center" style="margin-top: 50px;margin-bottom: 50px;">
+        <h2>Top Specialist Tailors</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3" style="row-gap: 50px;">
+        <div class="col" *ngFor="let data of Tailor" >
+            <div class="card" style="width: 24rem;">
+                <img [src]="getImageSource(data.TailorImage)" height="250px" routerLink="/TailorVeiw" (click)="GettingTailor(data._id)"  style="cursor: pointer;" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{data.TailorName}}</p>
+                    <div class="btn-toolbar justify-content-around">
+                        <a class="btn btn-success" (click)="TakeAppointment(data)" >Take Appointment</a>
+                        <!-- <a class="btn btn-warning" (click)="ProcedForSwing(dataTakeAppointmentTakeAppointment._id)"  >Proced Sewing</a> -->
+                        <!-- <a class="btn btn-success" routerLink="/Appoinment"  >Take Appointment</a> -->
+                        <!-- <a class="btn btn-warning" routerLink="/Measurements" >Proced Sewing</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <button class="btn btn-primary" >click</button> -->
+<app-footer></app-footer>

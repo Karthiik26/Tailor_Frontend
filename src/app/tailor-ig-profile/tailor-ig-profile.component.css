@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.wel{
+    font-size: 45px;
+}
+
+#maincont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.user-details {
+    width: 48%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+.user-details p{
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+
+.update-account {
+    width: 52%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.changepwd {
+    width: 52%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+
+}
+.btn-container {
+    /* margin-bottom: 20px; */
+    margin: 10px 20px;
+}
+.btn-container .btn{
+    margin-left: 20px;
+}
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+#password1{
+    width: 500px;
+}
+#password2{
+    width: 500px;
+}

@@ -1,0 +1,108 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container" style="top: 0px; left: 140px; position: relative; width: 100%;height: 100%;">
+  <div class="container">
+    <div class="text-center mt-3 mb-4">
+      <h2 style="letter-spacing: 1.5px; font-weight: 800;font-size: 32px;">Stock Inventry</h2>
+      <h6 style="letter-spacing: 1.5px; font-weight: 400;">Total Stock {{TotalStock}}</h6>
+    </div>
+    <div class="option">
+      <a class="btn btn-info" routerLink="/AddInventry">Add Your Stock</a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3" style="row-gap: 50px;">
+      <div class="col" *ngFor="let data of ClothData">
+        <div class="card" style="width: 24rem;">
+          <img [src]="getImageSource(data.ClothImge)" height="250px" class="card-img-top" alt="Image Getting Ready">
+          <div class="card-body">
+            <h5 class="card-title">{{data.ClothPrice}}</h5>
+            <p class="card-text text-center ">{{data.ClothName}}</p>
+            <div class="btn-toolbar justify-content-around">
+              <a type="button" class="btn btn-outline-success fs-5" data-bs-toggle="modal"
+                data-bs-target="#exampleModal1" (click)="GettingEditClothId(data.ClothId)">Update</a>
+              <a class="btn btn-danger pl-4" data-bs-toggle="modal" (click)="DeletingImage(data.ClothId)"
+                data-bs-target="#exampleModal">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalflexingitem">
+      <div class="modal-content changingbg">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: green;" id="exampleModalLabel">Update Your Product</h5>
+          <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div *ngIf="GettingClothToAC">
+          <form #ClothUpdate="ngForm"
+            (ngSubmit)="UpdateCloth(GettingClothToAC?.ClothId , ClothUpdate.value, ClothImge)">
+            <div class="mb-3 txting">
+              <label for="formFile" class="form-label">Import Product Image</label><br>
+              <input class="form-control-lg" type="file" id="formFile" name="ClothImge" #ClothImge>
+              <!-- <div>{{getFileNameFromBase64(GettingClothToAC?.ClothImge.data)}}</div> -->
+            </div>
+            <div class="form-floating mb-3 txting">
+              <input type="text" class="form-control" name="ClothName" #ClothName
+                ngModel="{{GettingClothToAC?.ClothName}}" id="floatingInputn">
+              <label for="floatingInputn">Your Product Name</label>
+            </div>
+            <div class="form-floating mb-3 txting">
+              <input type="text" class="form-control" name="ClothAbout" #ClothAbout
+                ngModel="{{GettingClothToAC?.ClothAbout}}" id="floatingInputa">
+              <label for="floatingInputa">About Your Product</label>
+            </div>
+            <div class="form-floating mb-3 txting">
+              <input type="number" class="form-control" name="ClothPrice" #ClothPrice
+                ngModel="{{GettingClothToAC?.ClothPrice}}" id="floatingInputp" placeholder="Product Price">
+              <label for="floatingInputp">Product Price</label>
+            </div>
+            <div class="form-floating mb-3 txting">
+              <input type="number" class="form-control" name="ClothTotalWithQuaPrice" #ClothTotalWithQuaPrice
+                ngModel="{{GettingClothToAC?.ClothTotalWithQuaPrice}}" id="floatingInputp" placeholder="Product Price">
+              <label for="floatingInputp">Re Enter Product Price</label>
+            </div>
+            <div class="form-floating mb-3 txting">
+              <input type="number" class="form-control" name="ClothQuantities" #ClothQuantities
+                ngModel="{{GettingClothToAC?.ClothQuantities}}" id="floatingInputq"
+                placeholder="Number Of Quantities Available">
+              <label for="floatingInputq">Number Of Quantities Available</label>
+            </div>
+            <div class="d-grid gap-2">
+
+              <button type="submit" class="btn btn-outline-success fs-5" data-bs-toggle="modal"
+                data-bs-target="#exampleModal2">
+                Update Product
+              </button>
+              <button class="btn btn-outline-primary fs-5" type="button" routerLink="/AllInventry">Show All</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- delete -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content changingbg">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: red;" id="exampleModalLabel">Your Product Was Deleted</h5>
+          <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- success -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content changingbg">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: green;" id="exampleModalLabel">Your Product Was Updated SuccessFullyy!!!
+          </h5>
+          <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

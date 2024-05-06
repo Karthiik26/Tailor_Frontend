@@ -1,0 +1,42 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container" *ngIf="HideShow1" >
+    <div class="head">Your Orders</div>
+    <div class="row">
+        <div class="box-1" *ngFor="let data of GettingOrders">
+            <div class="container containerflexing">
+                <span class="head2">
+                    <span class="">Order Id : </span>
+                    <span style="font-size: 18px; letter-spacing: 2px;" class="">#{{data.OrderId}}</span>
+                </span>
+                <span>
+                    <span class="item"> Cart Items :  </span>
+                    <span style="font-size: 18px; letter-spacing: 2px;" class="item2">{{data.CartItems.length}}</span>
+                </span>
+                <span>
+                    <span class="item">Total Amount :- </span>
+                    <span style="font-size: 18px; letter-spacing: 2px;" class="item2">{{data.TotalPrice.grandTotal}}</span>
+                </span>
+                <span>
+                    <span class="item">Mode Of Payment :- </span>
+                    <span style="font-size: 18px; letter-spacing: 2px;" class="item2">Online</span>
+                </span>
+                <span> 
+                    <span class="item">Order Date:- </span>
+                    <span class="item2">{{data.OrderDate}}</span>
+                </span>
+                <span>
+                    <span class="item">Order Time:- </span>
+                    <span class="item2">{{data.OrderTime}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="placeYourOrder" *ngIf="HideShow2" >
+    Place Your Order From Our Varient Cloths
+    <button class="btn btn-primary" routerLink="/Design" style="padding: 10px 20px;width: 30%;margin-top: 30px;" >Explore</button>
+</div>
+
+<app-footer></app-footer>

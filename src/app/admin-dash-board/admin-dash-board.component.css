@@ -1,0 +1,233 @@
+.center {
+    position: relative;
+    top: auto;
+    left: 12%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container01 {
+    width: 300px;
+    height: 250px;
+    background-color: #FF0000;
+    margin: 5px 20px;
+}
+
+.container01 h4 {
+    padding: 5px 12px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+.container02 {
+    width: 300px;
+    height: 250px;
+    background-color: #14FF00;
+    margin: 5px 20px;
+}
+
+.container02 h4 {
+    padding: 5px 12px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+.container03 {
+    width: 300px;
+    height: 250px;
+    background-color: #FFC700;
+    margin: 5px 20px;
+}
+
+.container03 h4 {
+    padding: 5px 12px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+.container04 {
+    width: 300px;
+    height: 250px;
+    background-color: #A8B1FF;
+    margin: 5px 20px;
+}
+
+.container04 h4 {
+    padding: 5px 12px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+
+/* container 01 load */
+
+.progress {
+    width: 130px;
+    height: 130px;
+    background: none;
+    position: relative;
+}
+
+.progress::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.progress .progress-left {
+    left: 0;
+}
+
+.progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 6px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress .progress-right {
+    right: 0;
+}
+
+.progress .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.progress .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rounded-lg {
+    border-radius: 1rem;
+}
+
+.text-gray {
+    color: #ffffff;
+}
+
+div.h4 {
+    line-height: 1rem;
+}
+
+/* container 02 load */
+
+@keyframes progress {
+    0% {
+        --percentage: 0;
+    }
+
+    100% {
+        --percentage: var(--value);
+    }
+}
+
+@property --percentage {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+[role="progressbar"] {
+    --percentage: var(--value);
+    --primary: #369;
+    --secondary: #adf;
+    --size: 120px;
+    animation: progress 2s 0.5s forwards;
+    width: var(--size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+[role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+    mask: radial-gradient(white 55%, transparent 0);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(#0000 62%, #000 0);
+    -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+    font-size: calc(var(--size) / 5);
+    color: var(--primary);
+}
+
+
+/* 2nd row */
+
+.center2 {
+    position: absolute;
+    top: 450px;
+    left: 19.5%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+}
+.cont-main-01{
+    width: 640px;
+    height: 350px;
+    background-color: #e994d4;
+    border-radius: 10px;
+}
+.cont-main-02{
+    width: 640px;
+    height: 350px;
+    background-color: #8beed5;
+    border-radius: 10px;
+}

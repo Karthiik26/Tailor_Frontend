@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container" *ngIf="HideShow1" >
+    <div class="head">Appointments of User</div>
+
+        <div class="row"  >
+            <div class="box-1" *ngFor="let data of AppointmentData" >
+                <div class="head2">Appointment Id :- {{data.AppointmentMiniId}}</div>
+                <div class="container containerflexing">
+                    <div class="item item1">
+                        <span class="title">Tailor Name :- </span>
+                        <span>{{data.TailorName}}</span>
+                    </div>
+                    <div class="item item2">
+                        <span class="title">Appointment Time :- </span>
+                        <span>{{data.Time}}</span>
+                    </div>
+                    <div class="item item3">
+                        <span class="title">Appointment Date :- </span>
+                        <span>{{data.Date}}</span>
+                    </div>
+                    <div class="item item4">
+                        <span class="title">Status :- </span>
+                        <span style="font-weight: 800;font-size: 22px;" >{{data.AppointmentStatus}}</span>
+                    </div>
+                    <div class="item item4">
+                        <span class="title"><Button class="btn btn-danger" [disabled]="data.AppointmentStatus==='Approved'"  (click)="DeleteItem(data)" >Cancel Appointment</Button></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</div>
+
+<div class="container appointment1" *ngIf="HideShow2" >
+    Place Your Appointment With Our Special Tailors
+</div>
+
+<app-footer></app-footer>

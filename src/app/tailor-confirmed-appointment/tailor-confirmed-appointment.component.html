@@ -1,0 +1,21 @@
+<app-tailor-nav></app-tailor-nav>
+
+<h2 class="text-center mt-3" style="font-weight: 800;font-size: 32px;letter-spacing: 2px;" >Confirmed Appointments</h2>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3" style="row-gap: 50px;">
+        <div class="col" *ngFor="let data of GettingAppointments" >
+            <div class="card" style="width: 24rem;" >
+                <div class="card-body">
+                    <h5 class="card-title">{{data.FirstName}} {{data.LastName}}</h5>
+                    <p class="card-text">Comments : {{data.CommentRequest}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Date :- {{data.Date}}</li>
+                    <li class="list-group-item">Day :- {{data.Time}}</li>
+                    <li class="list-group-item">Appointment For :- {{data.ServiceType}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:wght@700&display=swap');
+
+#chfs {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#chfs img {
+    width: 138px;
+    height: 45px;
+    object-fit: cover;
+    /* display: block; */
+    position: absolute;
+    top: 8px;
+    /* margin-top: 2px; */
+    margin-left: 65px;
+}
+
+li {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#navbarTogglerDemo03 {
+    margin-left: 120px;
+}
+
+ul {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin-left: 65px; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 30px;
+}
+
+#profile {
+    justify-content: end;
+    align-items: end;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10000000;
+    background: white;
+    box-shadow: 0px 5px 10px lightgray;
+}
+
+#background-round-color:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#background-round-color:focus-visible {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#background-color:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.flexingitem {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+}
+
+.flexing-Inside {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.profilepicarrow {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: -5;
+}
+
+.titlecentering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    bottom: -11px;
+    position: relative;
+}
+
+.username {
+    /* position: absolute; */
+    /* left: -10px; */
+    top: 33px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.dropdown-toggle02 {
+    left: -12px;
+    top: -6px;
+    position: relative;
+}
+
+
+/* notification */
+#notification-p {
+    position: fixed;
+    z-index: 1000000;
+}
+
+#notification-c {
+    position: absolute;
+    width: 30%;
+    background-color: white;
+    height: 300px;
+    right: -260px;
+    top: 14px;
+    z-index: 1000000;
+    border: 2px solid grey;
+    border-radius: 5px;
+    outline-offset: 5px;
+    padding: 12px 15px;
+    overflow-y: scroll;
+}
+
+#notification-sc {
+    box-shadow: 0px 1px 15px lightgrey;
+    border-radius: 5px;
+    padding: 15px 10px;
+    margin: 10px 0px;
+}
+
+#notification-sc .head {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.main-msg {
+    font-size: 16px;
+    letter-spacing: 1.2px;
+}
+
+.disapear {
+    font-size: 14px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+#notification-c::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+#notification-c::-webkit-scrollbar-thumb {
+    background-color: rgb(112, 131, 236);
+    width: 5px;
+    border-radius: 15px;
+}
+
+#notification-c::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.notify {
+    position: relative;
+    top: -12px;
+    left: -38px;
+    font-size: smaller;
+    font-weight: 900;
+    background-color: rgb(204, 204, 204);
+    border-radius: 50%;
+    padding: 3px 10px;
+}
+
+.centeringdiv {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto; */
+}

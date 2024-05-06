@@ -1,0 +1,18 @@
+#BGimage{
+    background: url(../../assets/bg-img-03.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin: 0;
+    width: 100%;
+    height: 140px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+    margin: auto;
+    font-weight: 800;
+    font-size: 30px;
+
+}

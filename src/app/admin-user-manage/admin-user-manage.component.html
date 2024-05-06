@@ -1,0 +1,46 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container" style="top: 0px; left: 140px; position: relative; width: 100%;height: 100%;">
+    <div class="container mt-3" >
+        <h2 style="text-align: center;font-weight: 800;letter-spacing: 3px;" >User Details</h2>
+        <h6 style="text-align: center;font-weight: 800;letter-spacing: 3px;" >
+          Total Number Of user {{length}}
+        </h6>
+    </div>
+    <div class="box1" *ngFor="let data of UserData" >
+        <div class="cont01">
+            <h4><span style="font-weight: 500;">User Name : </span><span
+                    style="font-weight: 800;letter-spacing: 1.5px;">{{data.UserName}}</span> </h4>
+            <h5 style="font-weight: 500;"> Phone Number : +91{{data.Phone}} </h5>
+        </div>
+    
+        <div class="cont03">
+            <h5 style="font-weight: 500;">Email : {{data.Email}}</h5>
+            <h5 style="font-weight: 500;"> User Id : {{data._id}} </h5>
+        </div>
+    
+        <div class="cont02">
+            <h6 style="font-weight: normal;"></h6>
+        </div>
+    
+        <div class="cont04">
+            <button class="btn btn-outline-danger" (click)="DeleteUser(data._id)" data-bs-toggle="modal" data-bs-target="#exampleModal" >Delete</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalflexingitem" >
+      <div class="modal-content changingbg">
+        <div class="modal-header">
+          <h5 class="modal-title"  style="color: red;" id="exampleModalLabel">User Was Deleted</h5>
+          <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- <div class="modal-body" style="color: green;" >
+          Go To Inventry 
+        </div> -->
+        <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,54 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container"
+    style="display: flex;justify-content: center;align-items: center;margin: auto;flex-direction: column;">
+    <div class="container">
+        <h2 class="text-center mt-5" style="font-weight: 800;font-size: 32px;letter-spacing: 2px;">Add Your Address
+        </h2>
+        <h5 style="color: black;font-size: medium;text-align: center;" class="p-4" >{{msgAddress}}</h5>
+    </div>
+    <form class="row g-3" #AddressForm="ngForm" (ngSubmit)="AdressSubmitForm(AddressForm.value)">
+        <div class="col-md-6 form-floating">
+            <input type="number" class="form-control" id="PhoneNumber1" placeholder="Phone Number" name="Phone1"
+                #Phone1="ngModel" ngModel="{{PhoneNumberFetch}}" readonly>
+            <label for="PhoneNumber1">Phone Number</label>
+        </div>
+        <div class="col-md-6 form-floating">
+            <input type="number" class="form-control" id="PhoneNumber2" placeholder="Phone Number 2 (Optional)"
+                name="Phone2" #Phone2="ngModel" ngModel>
+            <label for="PhoneNumber2" class="form-label">Phone Number 2 (Optional) </label>
+        </div>
+        <div class="col-12 form-floating">
+            <input type="text" class="form-control" id="inputAddress1" placeholder="H No / Flat No - 5001 , Main St"
+                name="Address1" #Address1="ngModel" ngModel required>
+            <label for="inputAddress1" class="form-label">Address</label>
+        </div>
+        <div class="col-12 form-floating">
+            <input type="text" class="form-control" id="inputAddresson2" placeholder="Apartment, studio, or floor"
+                name="Address2" #Address2="ngModel" ngModel required>
+            <label for="inputAddresson2" class="form-label">Address 2</label>
+        </div>
+        <div class="col-md-2 form-floating">
+            <input type="text" id="pincode" #Pincode="ngModel" name="Pincode" ngModel required formcontrolname="pincode"
+                class="form-control ng-untouched ng-pristine ng-invalid" (input)="fetchDataOnInput(Pincode.value)">
+            <label for="pincode" class="form-label">Pin Code</label>
+        </div>
+        <div class="col-md-6 form-floating">
+            <input type="text" id="inputCity" formcontrolname="city"
+                class="form-control ng-untouched ng-pristine ng-invalid" name="City" #City="ngModel" ngModel
+                [(ngModel)]="city">
+            <label for="inputCity" class="form-label">City</label>
+        </div>
+        <div class="col-md-4 form-floating">
+            <input type="text" id="inputState" formcontrolname="state" readonly=""
+                class="form-control ng-untouched ng-pristine ng-invalid" name="State" #State="ngModel" ngModel
+                [(ngModel)]="state">
+            <label for="inputState" class="form-label">State</label>
+        </div>
+        <div class="col-12"
+            style="display: flex;justify-content: flex-end;align-items: flex-end;margin: auto;padding-top: 50px;">
+            <button type="submit" class="btn btn-outline-success fs-5"
+                style="padding-left: 50px;padding-right: 50px;font-size: 18px;" (click)="Redirecting()" >Add Address</button>
+        </div>
+    </form>
+</div>

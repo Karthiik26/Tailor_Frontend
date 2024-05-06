@@ -1,0 +1,116 @@
+.fixing img {
+    width: 100px;
+    height: 80px;
+    float: left;
+}
+.description p {
+    padding-left: 30px;
+    float: left;
+    text-align: left;
+}
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0px;
+    width: 300px;
+}
+tbody {
+    vertical-align: middle;
+}
+tr td {
+    padding: 12px 4px;
+}
+.Quantity p {
+    text-align: center;
+}
+.price p {
+    /* float: left; */
+    text-align: center;
+}
+.total p {
+    text-align: center;
+    /* float: left; */
+}
+table {
+    width: 75%;
+}
+
+.heading h1 {
+    font-size: 33px;
+    font-weight: 800;
+    padding: 15px 10px;
+    text-align: center;
+    margin: 30px 0;
+}
+.sidecalculation {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 0 0 838px;
+    padding-top: 30px;
+}
+.sidecalculation02 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 0 0 838px;
+    padding-top: 30px;
+}
+.changingFont {
+    font-size: 18px;
+    font-weight: 500;
+}
+.flexing {
+    display: flex;
+    margin: 5px;
+}
+
+.flexing h5 {
+    padding-left: 12px;
+    padding-top: 8px;
+}
+
+.quantitybutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.right-btn {
+    border: 1px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0px 12px;
+    border-right: none;
+    background: none;
+}
+.left-btn {
+    background: none;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0px 12px;
+    border-left: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+#number {
+    width: 35.5px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    font-size: 15px;
+}

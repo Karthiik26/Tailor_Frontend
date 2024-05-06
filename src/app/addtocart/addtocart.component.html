@@ -1,0 +1,93 @@
+<app-nav-bar [item]="clothnumber"></app-nav-bar>
+
+<div *ngIf="DisplayHideShow">
+    <div class="container">
+        <div class="container-fluid heading">
+            <h1>Your Cart [ {{clothnumber}} Items]</h1>
+        </div>
+        <table class="container table">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="2" class="text-center">Item</th>
+                    <th scope="col" class="text-center">Price</th>
+                    <th scope="col" class="text-center">Quantity</th>
+                    <th scope="col" class="text-center">Total</th>
+                    <th scope="col" class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let data of CartItems">
+                <tr>
+                    <td scope="row" colspan="2" class="fixing">
+                        <img [src]="getImageSource(data.ClothImge)" alt="">
+                        <div class="description">
+                            <p class="changingFont" style="text-align: center;">{{data.ClothName}}</p>
+                        </div>
+                    </td>
+                    <td class="price changingFont ">
+                        <p>&#8377; {{data.ClothPrice}}</p>
+                    </td>
+                    <td class="Quantity changingFont ">
+                        <div class="quantitybutton">
+                            <form #GetQuantity="ngForm" (submit)="addingquantity(GetQuantity.value, data.ClothId)">
+                                <button type="submit" class="right-btn" (click)="decreaseValue(data)">-</button>
+                                <input type="number" id="number" name="ClothQuantityUser"
+                                    [(ngModel)]="data.ClothQuantityUser">
+                                <button type="submit" class="left-btn" (click)="increaseValue(data)">+</button>
+                            </form>
+                        </div>
+                    </td>
+                    <td class="total changingFont ">
+                        <p>{{data.ClothTotalWithQuaPrice}}</p>
+                    </td>
+                    <td class="total changingFont ">
+                        <button (click)="RemoveCartItem(data.ClothId)" class="btn btn-danger">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container sidecalculation" *ngIf="GettingTotal">
+        <table class="table">
+            <tr class="changingFont">
+                <td>SubTotal</td>
+                <td style="text-align: right;">&#8377; {{GettingTotal.subtotalPrice}}</td>
+            </tr>
+            <tbody>
+                <tr class="changingFont">
+                    <td>Sale Tax</td>
+                    <td style="text-align: right;">&#8377; {{GettingTotal.tax}}</td>
+                </tr>
+            </tbody>
+            <tr>
+                <td style="font-size: 22px; font-weight: 600; ">Grand Total</td>
+                <td style="text-align: right;font-size: 28px; font-weight: 600;">&#8377;
+                    {{GettingTotal.grandTotal}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container sidecalculation02">
+        <div class="card" style="width: 24rem;margin: 20px 0px; ">
+            <div class="flexing">
+                <div>
+                    <h5 style="width: 280px;">Know You Can Go For CheckOut</h5>
+                </div>
+                <img width="60px" height="65px" src="../../assets/truck.png" alt="">
+            </div>
+            <div class="card-body text-center">
+                <a class="btn btn-success" routerLink="/CheckOutProduct">Check Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="DisplayHideShow2"
+    style="width:100%;height: auto;display: flex;justify-content: center;margin: auto;flex-direction: column;align-items: center;"
+    class="">
+    <h1 style="padding: 90.5px;">Your Cart Is Empty </h1>
+    <button class="btn btn-primary" style="width: 30%;margin-bottom: 100px;" routerLink="/Design">Explore Cloth
+        Section</button>
+</div>
+<app-footer></app-footer>

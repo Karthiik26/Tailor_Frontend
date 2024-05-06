@@ -1,0 +1,63 @@
+.box-1 {
+    width: 26rem;
+    height: 270px;
+    background-color: rgb(206, 222, 250);
+    border: 1px solid grey;
+    padding: 15px 12px;
+    margin: 15px 25px;
+    border-radius: 40px;
+}
+
+.head {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 20px 15px;
+}
+
+.containerflexing {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    margin: auto;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 30px;
+}
+
+.placeYourOrder {
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.head2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 10px 12px;
+}
+
+.item {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding-top: 10px;
+}
+
+.item2 {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+
+}

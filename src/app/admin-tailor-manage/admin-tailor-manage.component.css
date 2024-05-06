@@ -1,0 +1,51 @@
+.box1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    /* border: 1px solid black; */
+    /* padding: 30px 25px; */
+    margin-top: 10px;
+}
+.boxmain {
+    padding: 30px 25px;
+    border-radius: 20px;
+    margin-top: 50px;
+    border: 1px solid black;
+}
+.cont04{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cont04 .btn{
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cont02{
+    width: 400px;
+}
+.cont01{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.contmain {
+    display: flex;
+    flex-direction: row;
+    gap: 12px; 
+}
+.cont03{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.modalflexingitem{
+    position: relative;
+    top: 700px;
+    right: -550px;
+}
+.md2 {
+    margin-top: 10px;
+}

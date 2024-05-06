@@ -1,0 +1,36 @@
+.box-1{
+    width: 24rem;
+    height: 180px;
+    background-color: rgb(176, 245, 176);
+    border: 1px solid grey;
+    padding: 15px 12px;
+    margin: 15px 25px;
+    border-radius: 10px;
+}
+.head {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 20px 15px;
+}
+.containerflexing {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    margin: auto;
+    flex-direction: column;
+    gap: 10px;
+}
+.item {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding-top: 10px;
+}
+.item2 {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+
+}

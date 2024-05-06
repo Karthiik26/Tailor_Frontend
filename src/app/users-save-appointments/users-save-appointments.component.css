@@ -1,0 +1,45 @@
+.box-1{
+    width: 24rem;
+    height: 300px;
+    background-color: antiquewhite;
+    padding: 10px 12px;
+    margin: 15px 25px;
+    border-radius: 10px;
+}
+.head {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 20px 15px;
+}
+.box-1 .head2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 10px 12px;
+}
+.containerflexing {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    margin: auto;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+}
+.item .title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.appointment1{
+    text-align: center;
+    font-size: larger;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding-top: 173.5px;    
+    padding-bottom: 173.5px;    
+}

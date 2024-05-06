@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:wght@700&display=swap');
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.footer-work{
+    width: 100%;
+    height: auto;
+    color: white;
+    background-color: black;
+    padding: 30px 0 0 0;
+}
+.footer{
+    display: flex;
+    margin-left: 20px;
+    gap: 30px;
+}
+.footer div{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 100px;
+}
+.item{
+    cursor: pointer;
+    transition: 0.4s all ease-in-out;
+}
+.item:hover{
+    transform: scale(1.2);
+}
+.footer-01{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    padding-top: 20px;
+
+}
+.centering{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    position: relative;
+    /* margin-top: -10px; */
+    padding-left: 80px;
+    top: -35px;
+    height: 25px;
+}
+.container-m{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /* padding: 10px 20px;
+    gap: 10px; */
+}
+.row-1{
+    display: flex;
+    flex-direction: column;
+    
+}
+.row-2{
+    display: flex;
+    flex-direction: column;
+
+}
+.row-3{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.line{
+    width: 2px;
+    height: 120px;
+    background-color: white;
+}
+ul li{
+    list-style-type: none;
+    padding: 10px 12px;
+    font-size: 18px;
+    float: left;
+    text-align: center;
+}
+li{
+    cursor: pointer;
+}
+img{
+    cursor: pointer;
+}
+.copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+.titling{
+    display: flex;
+    justify-content: center;
+}
+.titling img{
+    width: 80px;
+    height: 80px;
+    margin: 0px 15px;
+    border-radius: 10px;
+    top: -10px;
+    right: -10px;
+    position: relative;
+}
+.titling h2{
+    margin-top: 0px;
+}

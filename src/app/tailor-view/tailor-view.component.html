@@ -1,0 +1,39 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="header">
+    <h2 class="text-center mt-4">Detailes About Tailor Design </h2>
+</div>
+<div class="container-fluid container-main" *ngIf="TailorDataById">
+    <div class="box-1" style="width: 60%;float: left;">
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img [src]="getImageSource(TailorDataById.TailorImage)" class="d-block" width="100%" height="600px"
+                        alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-2">
+        <div class="inside-box-1">
+            <h2 style="padding-top: 15px;padding-bottom: 30px;">{{TailorDataById.TailorName}}</h2>
+        </div>
+        <div class="inside-box-2">
+            <h4 style="top: 0px;position: relative;"> <b>Description :-</b>
+                <p>{{TailorDataById.TailorAbout}}</p>
+            </h4>
+            <br>
+            <h4> <b> Availabilty : </b> {{TailorDataById.FromTime}} To {{TailorDataById.ToTime}} </h4>
+            <br>
+            <h4> <b>Location :-</b>
+                <p>{{TailorDataById.TailorAddress}}</p>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<hr>
+<hr>

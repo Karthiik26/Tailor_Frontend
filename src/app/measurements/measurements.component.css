@@ -1,0 +1,119 @@
+#headingimage {
+    background: url('../../assets/design images/d-02.jpg');
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.firstimg {
+    filter: brightness(0.5);
+}
+
+.measurementtext {
+    position: relative;
+    top: -180px;
+    width: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+ul li {
+    font-size: 18px;
+    padding: 5px 0px;
+    cursor: pointer;
+}
+
+.dropdown {
+    z-index: 1000;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* .formitem form{
+    display: grid;
+    place-items: center;
+} */
+.formcont {
+    border: 1px solid lightgray;
+    padding: 30px 15px;
+    border-radius: 30px;
+}
+
+#FullHands {
+    width: 200px;
+}
+
+#HalfHands {
+    width: 200px;
+}
+
+.buttonitems {
+    margin: 10px 20px;
+}
+
+.buttonitems-main {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.buttonitems button {
+    padding: 10px 60px;
+}
+
+.guide {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    flex-direction: column;
+}
+
+.guide ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    list-style: none;
+}
+
+.guide ul li {
+    padding: 10px 15px;
+    margin: 10px 20px;
+}
+
+#Checkbtn {
+    margin: 15px;
+    font-size: 22px;
+}
+
+#Checkbtn label {
+    font-size: 20px;
+}
+
+label {
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

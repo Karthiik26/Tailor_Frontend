@@ -1,0 +1,118 @@
+<app-tailor-nav></app-tailor-nav>
+
+<div class="container-fluid" id="maincont">
+
+    <h3> <span class="wel">Welcome</span> {{Tailordata.TailorName}} </h3>
+
+    <div class="btn-container">
+        <button class="btn" (click)="Myaccount()">My Account</button>
+        <button class="btn" (click)="UpdateAccount()">Update Account</button>
+        <button class="btn" (click)="UpdatePaassword()">Update Password</button>
+    </div>
+
+
+    <div class="container">
+        <div class="user-details" id="userDetails" *ngIf="Side1">
+            <!-- <h2>User Details</h2> -->
+            <p><strong>Tailor Name:</strong> {{Tailordata.TailorName}}</p>
+            <p><strong>Email:</strong> {{Tailordata.TailorEmail}}</p>
+            <p><strong>Phone:</strong> {{Tailordata.TailorPhone}}</p>
+            <p><strong>Speciality:</strong> {{Tailordata.TailorSpecialist}}</p>
+            <p><strong>From Time:</strong> {{Tailordata.FromTime}}</p>
+            <p><strong>To Time:</strong> {{Tailordata.ToTime}}</p>
+            <p><strong>About:</strong> {{Tailordata.TailorAbout}}</p>
+            <p><strong>Location:</strong> {{Tailordata.TailorAddress}}</p>
+        </div>
+        <div class="update-account" id="updateAccount" *ngIf="Side2">
+            <!-- <h2>Update Account</h2> -->
+            <form #Update="ngForm" (ngSubmit)="UpdateTheTailor(Update.value);" >
+                <div class="form-group">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" alt="" #TailorName="ngModel" name="TailorName"
+                            ngModel="{{Tailordata?.TailorName}}">
+                    </div>
+
+                    <div>
+                        <label for="TailorEmail">Email:</label>
+                        <input type="text" class="form-control" id="TailorEmail" alt="" #TailorEmail="ngModel"
+                            name="TailorEmail" ngModel="{{Tailordata?.TailorEmail}}">
+                    </div>
+                    <div>
+                        <label for="TailorPhone">Phone:</label>
+                        <input type="text" class="form-control" id="TailorPhone" alt="" #TailorPhone="ngModel"
+                            name="TailorPhone" ngModel="{{Tailordata?.TailorPhone}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="TailorSpecialist">Specialist</label>
+                        <input type="text" class="form-control" id="TailorSpecialist" alt="" #TailorSpecialist="ngModel" name="TailorSpecialist"
+                            ngModel="{{Tailordata?.TailorSpecialist}}">
+                    </div>
+                    <div>
+                        <label for="FromTime">Strting Time:</label>
+                        <input type="text" class="form-control" id="FromTime" alt="" #FromTime="ngModel"
+                            name="FromTime" ngModel="{{Tailordata?.FromTime}}">
+                    </div>
+                    <div>
+                        <label for="ToTime">Closing Time:</label>
+                        <input type="text" class="form-control" id="ToTime" alt="" #ToTime="ngModel"
+                            name="ToTime" ngModel="{{Tailordata?.ToTime}}">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="TailorAbout">About:</label>
+                        <textarea type="text" class="form-control" id="TailorAbout" cols="80" rows="3" alt="" #TailorAbout="ngModel" name="TailorAbout"
+                            ngModel="{{Tailordata?.TailorAbout}}"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="TailorAddress">Location:</label>
+                        <textarea type="text" class="form-control" id="TailorAddress" cols="80" rows="2" alt="" #TailorAddress="ngModel" name="TailorAddress"
+                            ngModel="{{Tailordata?.TailorAddress}}"></textarea>
+                    </div>
+                </div>
+              
+                <button type="submit" class="btn ">Update</button>
+            </form>
+        </div>
+        <div class="changepwd" id="" *ngIf="Side3">
+            <!-- <h2>Update Account</h2> -->
+            <form #PwdChange="ngForm" (ngSubmit)="ChangePWD(old.value, newpass.value )" >
+                <div class="m-3">
+                    <label for="password1">Enter Old Password:</label>
+                    <br>
+                    <input type="password" id="password1" class="form-control" placeholder="Enter Your Old Password" name="old"
+                            #old="ngModel" ngModel required minlength="8">
+                        <!-- <br> -->
+                            <div *ngIf="old?.invalid && (old?.dirty || old?.touched)" class="text-danger">
+                            <div *ngIf="old?.errors?.['required']">Old Password is required.</div>
+                            <div *ngIf="old?.errors?.['minlength']">Old Password must be at least 8 characters long.
+                            </div>
+                        </div>
+                        <!-- <br><br> -->
+                </div>
+                <div class="m-3">
+                    <label for="password2">Enter New Password:</label>
+                    <br>
+                       <input type="password" id="password2" class="form-control" placeholder="Your New Password" name="newpass"
+                            #newpass="ngModel" ngModel required minlength="8">
+                        <!-- <br> -->
+                            <div *ngIf="newpass?.invalid && (newpass?.dirty || newpass?.touched)" class="text-danger">
+                            <div *ngIf="newpass?.errors?.['required']">New Password is required.</div>
+                            <div *ngIf="newpass?.errors?.['minlength']">New Password must be at least 8 characters long.
+                            </div>
+                        </div>
+                        <!-- <br><br> -->
+                </div>
+
+                <button type="submit" class="btn ">Update</button>
+            </form>
+        </div>
+    </div>
+
+</div>

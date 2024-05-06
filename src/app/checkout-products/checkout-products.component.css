@@ -1,0 +1,295 @@
+.card-input-element {
+    display: none;
+}
+
+.card-input {
+    margin: 10px;
+    padding: 0px;
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+/* .card-input-element:checked+.card-input {
+    box-shadow: 0 0 3px 1px #2ecc71;
+} */
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 2px;
+}
+
+/* .radios1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+} */
+
+.RadioBtn1 {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+.RadioBtn2 {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+#RadioBtn1 {
+    width: 25px;
+    margin-top: -6px;
+}
+
+#RadioBtn2 {
+    width: 25px;
+    margin-top: -6px;
+}
+
+.radiosinp1 {
+    width: 25px;
+    margin-top: -6px;
+}
+
+.radios1 {
+    padding: 5px 10px;
+    border-bottom: 0.2px solid grey;
+}
+
+.radios2 {
+    padding: 5px 10px;
+    padding-top: 10px;
+}
+
+.radioscont1 {
+    margin-left: 10px;
+}
+
+.radioscont2 {
+    margin-left: 10px;
+}
+
+.radioscont3 {
+    margin-left: 10px;
+}
+
+.radioscont4 {
+    margin-left: 10px;
+}
+
+input[type=radio],
+label {
+    cursor: pointer;
+}
+
+
+/* placing order */
+.flexingProduct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 10px;
+    /* padding-top: 25px; */
+    border-bottom: 0.5px solid grey;
+}
+
+.flexingProduct img {
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+.aboutproductdetails {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 50px;
+}
+
+.titleheading {
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    font-size: 28px;
+}
+
+.aboutOrder {
+    font-size: 18px;
+}
+
+.pricing {
+    float: left;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.DeliveryGuaranted {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: green;
+}
+
+.GettingDate .item1 {
+    font-size: 23px;
+    color: green;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.GettingDate .item2 {
+    font-size: 18px;
+    color: black;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* aside div bar */
+
+.shippingDetails .Item1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.shippingDetails .Item2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.totalbill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: -30px;
+}
+
+.itemsrow1 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: left;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 1.5px;
+}
+
+.itemsrow1 span {
+    margin-top: -10px;
+}
+
+.itemsrow2 span:nth-child(even) {
+    margin-top: -10px;
+}
+
+.itemsrow2 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: right;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+.BiggerText{
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.deliverto{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.deliverto .item1 {
+    font-size: 24px;
+}
+.deliverto .item2{
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding-left: 30px;
+    padding-top: 25px;
+}
+.deliverto .item3 {
+    font-size: 18px;
+    padding-left: 30px;
+    width: auto;
+    height: 25px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.placeurorder{
+    font-size: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/* progress bar */
+
+.progressbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.progressbar .line{
+    width: 300px;
+    height: 10px;
+    background-color: pink;
+    position: relative;
+    /* top: -10px; */
+}
+.btnprog1{
+    margin-top: 5px;
+    margin-left: 12px;
+}
+.progressbar #ButtonProgress1{
+    padding: 8px 20px;
+    border-radius: 100%;
+    border:5px solid lightgreen;
+    font-size: 26px;
+    font-weight: 700;
+    background-color: green;
+    color: white;
+}
+.progressbar #ButtonProgress2{
+    padding: 8px 20px;
+    border-radius: 100%;
+    border: 5px solid lightgreen;
+    font-size: 26px;
+    font-weight: 700;
+    background-color: green;
+    color: white;
+}
+.progressbar #ButtonProgress3{
+    padding: 8px 20px;
+    border-radius: 100%;
+    border: 5px solid lightgreen;
+    font-size: 26px;
+    font-weight: 700;
+    background-color: green;
+    color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,984 @@
+<app-nav-bar></app-nav-bar>
+
+<!-- BGIMAGE AND TEXT -->
+<div class="container">
+    <div class="text-center mt-4 main-item">
+        <img src="../../assets/design images/d-02.jpg" width="100%" height="300px"
+            class="rounded-5 object-fit-cover firstimg" alt="">
+        <div class="measurementtext">
+            <h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis eligendi itaque ex facere culpa
+                et hic voluptatem, nulla voluptate!
+            </h4>
+        </div>
+    </div>
+</div>
+
+<!-- select for sweing -->
+<div class="container" style="display: flex; justify-content: center; margin: auto;margin-top: -62px; width: 100%;">
+    <div class="dropdown">
+        <button class="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            style="width: 100%;font-size: 20px;" aria-expanded="false">
+            Select One For Give Measurement
+        </button>
+        <ul class="dropdown-menu" style="width: 100%;">
+            <li><a class="dropdown-item" (click)="FormalDress()">Formal Dress</a></li>
+            <li><a class="dropdown-item" (click)="Blazer()">Blazer</a></li>
+            <li><a class="dropdown-item" (click)="KurtaandPaijama()">Kurta & Pyjama</a></li>
+            <li><a class="dropdown-item" (click)="Sherwani()">Sherwani</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- warning -->
+<div class="container">
+    <div style="padding: 10px 5px;text-align: center;">
+        <span style="color: red; font-weight: 600; ">Note* :- Measurements Should be in Inches</span>
+    </div>
+</div>
+
+<!-- Formal Dress -->
+<div class="container mt-4 mb-5" style="padding-left: 50px;" *ngIf="FormalShirthiding">
+    <div class="container formcont">
+        <div class="text-center mb-5">
+            <h2>Formal Dress Measurement</h2>
+        </div>
+        <form #FormalDresscode="ngForm" (submit)="SubmitFormalDress(FormalDresscode.value)">
+
+            <!-- select shirt yes or no -->
+            <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                <div class="col">
+                    <div>
+                        <h5>What Do You Want To Sweing From Formal</h5>
+                    </div>
+                    <div style="width: 24rem;" id="Checkbtn">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                                name="FormalShirtCheckBox" #FormalShirtCheckBox="ngModel" ngModel
+                                [(ngModel)]="checkbox1" (change)="UpdateText()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Formal Shirt
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckChecked"
+                                name="FormalPantCheckBox" #FormalPantCheckBox="ngModel" ngModel [(ngModel)]="checkbox2"
+                                (change)="UpdateText()">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Formal Pant
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- formal shirt -->
+            <div *ngIf="FormalShirt">
+                <div class="text-center" style="margin-top: 10px;margin-bottom: 30px;">
+                    <h3>Formal Shirt</h3>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="row-gap: 30px;">
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="CollarSize" class="form-label">Collar</label>
+                            <input type="number" class="form-control" placeholder="Collar Size" id="CollarSize" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="Shirtcollar" #Shirtcollar="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ChestSize" class="form-label">Chest</label>
+                            <input type="number" class="form-control" id="ChestSize" placeholder="Chest Size" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="ShirtChest" #ShirtChest="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="WeistSize" class="form-label">Weist</label>
+                            <input type="number" class="form-control" placeholder="Weist Size" id="WeistSize" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="ShirtWeist" #ShirtWeist="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="FBSize" class="form-label">First Button</label>
+                            <input type="number" class="form-control" placeholder="First Button Size" id="FBSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="ShirtFirstButton"
+                                #ShirtFirstButton="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="SLFSize" class="form-label">Shirt Front Length</label>
+                            <input type="number" class="form-control" placeholder="Shirt Front Length Size" id="SLFSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="ShirtFrontLength"
+                                #ShirtFrontLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="SLBSize" class="form-label">Shirt Back Length</label>
+                            <input type="number" class="form-control" placeholder="Shirt Back Length Size" id="SLBSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="ShirtBackLength"
+                                #ShirtBackLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ArmholeSize" class="form-label">Armhole</label>
+                            <input type="number" class="form-control" placeholder="Armhole Size" id="ArmholeSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="ShirtArmhole"
+                                #ShirtArmhole="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BicepsSize" class="form-label">Biceps</label>
+                            <input type="number" class="form-control" placeholder="Biceps Size" id="BicepsSize" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="ShirtBiceps" #ShirtBiceps="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="SeatSize" class="form-label">Seat</label>
+                            <input type="number" class="form-control" placeholder="Seat Size" id="SeatSize" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="ShirtSeat" #ShirtSeat="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ShoulderSize" class="form-label">Shoulder</label>
+                            <input type="number" class="form-control" placeholder="Shoulder Size" id="ShoulderSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="ShirtShoulder"
+                                #ShirtShoulder="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BWSize" class="form-label">Back Width</label>
+                            <input type="number" class="form-control" placeholder="Back Width Size" id="BWSize" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="ShirtBackWidth"
+                                #ShirtBackWidth="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="FWSize" class="form-label">Front Width</label>
+                            <input type="number" class="form-control" id="FWSize" placeholder="Front Width Size" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="ShirtFrontWidth"
+                                #ShirtFrontWidth="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col" style="width: 24rem;">
+                        <select class="form-select" (change)="Changeelement($event)">
+                            <option selected value="0">select Sleevs</option>
+                            <option value="1" name="ShirtFullHands" #ShirtFullHands="ngModel" ngModel>Full Hands
+                            </option>
+                            <option value="2" name="ShirtHalfHands" #ShirtHalfHands="ngModel" ngModel>Half Hands
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="FullhandsShift" *ngIf="FullSleevs">
+                    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                        <h5>Full Sleevs</h5>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 10px; row-gap: 30px;">
+                        <div class="col">
+                            <div style="width: 24rem;">
+                                <label for="CuffSize" class="form-label">Cuff</label>
+                                <input type="number" class="form-control" id="CuffSize" placeholder="Cuff Size" min="0"
+                                    oninput="this.value = Math.abs(this.value)" name="ShirtFullHandsCuff"
+                                    #ShirtFullHandsCuff="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div style="width: 24rem;">
+                                <label for="ForearmSize" class="form-label">Forearm</label>
+                                <input type="number" class="form-control" id="ForearmSize" placeholder="Forearm Size"
+                                    min="0" oninput="this.value = Math.abs(this.value)" name="ShirtFullHandsForearm"
+                                    #ShirtFullHandsForearm="ngModel" ngModel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                        <div style="width: 99%;">
+                            <div class="form-floating">
+                                <label for="floatingTextarea">Leave a Comment Here</label>
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                                    style="height: 100px;" name="ShirtFullHandsComment" #ShirtFullHandsComment="ngModel"
+                                    ngModel></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="HalfhandsShift" *ngIf="HalfSleevs">
+                    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                        <h5>Half Sleevs</h5>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 10px; row-gap: 30px;">
+                        <div class="col">
+                            <div style="width: 24rem;">
+                                <label for="SSOSize" class="form-label">Short Sleeves Opening</label>
+                                <input type="number" class="form-control" id="SSOSize"
+                                    placeholder="Short Sleeves Opening Size" min="0"
+                                    oninput="this.value = Math.abs(this.value)" name="ShirtHalfHandsopening"
+                                    #ShirtHalfHandsopening="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div style="width: 24rem;">
+                                <label for="SSLSize" class="form-label">Short Sleeves Length</label>
+                                <input type="number" class="form-control" id="SSLSize"
+                                    placeholder="Short Sleeves Length Size" min="0"
+                                    oninput="this.value = Math.abs(this.value)" name="ShirtHalfHandslength"
+                                    #ShirtHalfHandslength="ngModel" ngModel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                        <div style="width: 99%;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                                    style="height: 100px;"></textarea>
+                                <label for="floatingTextarea">Leave a Comment Here</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- formal pant -->
+            <div *ngIf="FormalPant">
+                <div class="text-center" style="margin-top: 30px;margin-bottom: 30px;">
+                    <h3>Formal Pant</h3>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="WeistSize" class="form-label">Weist</label>
+                            <input type="number" class="form-control" placeholder="Weist Size" id="WeistSize"
+                                name="PantWeist" #PantWeist="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="LengthSize" class="form-label">Total Length</label>
+                            <input type="number" class="form-control" placeholder="Length Size" id="LengthSize"
+                                name="PantLength" #PantLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="HipSize" class="form-label">Hip</label>
+                            <input type="number" class="form-control" placeholder="Hip Size" id="HipSize" name="PantHip"
+                                #PantHip="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ThighSize" class="form-label">Thigh</label>
+                            <input type="number" class="form-control" placeholder="Thigh Size" id="ThighSize"
+                                name="PantThighs" #PantThighs="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="KneeSize" class="form-label">Knee</label>
+                            <input type="number" class="form-control" placeholder="Knee Size" id="KneeSize"
+                                name="PantKnee" #PantKnee="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BottomSize" class="form-label">Bottom</label>
+                            <input type="number" class="form-control" placeholder="Bottom Size" id="BottomSize"
+                                name="PantBottom" #PantBottom="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="FrontRaiseSize" class="form-label">Front Raise</label>
+                            <input type="number" class="form-control" placeholder="Front Raise Size" id="FrontRaiseSize"
+                                name="PantFrontRaise" #PantFrontRaise="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BackRaiseSize" class="form-label">Back Raise</label>
+                            <input type="number" class="form-control" placeholder="Back Raise Size" id="BackRaiseSize"
+                                name="PantBackRaise" #PantBackRaise="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="InseamLengthSize" class="form-label">Inseam Length</label>
+                            <input type="number" class="form-control" placeholder="Inseam Length Size"
+                                id="InseamLengthSize" name="PantInseamLength" #PantInseamLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BackPockets" class="form-label">Back Pockets</label>
+                            <input type="number" class="form-control" placeholder="Back Pockets minimum-1 maximum-2"
+                                min="1" max="2" id="BackPockets" name="PantBackPockets" #PantBackPockets="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div style="width: 99%;">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                                style="height: 100px;" name="PantComment" #PantComment="ngModel" ngModel></textarea>
+                            <label for="floatingTextarea">Leave a Comment Here</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procced And Save Button  -->
+            <div *ngIf="ProcedSaveButton">
+
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div class="col" style="width: 24rem;">
+                        <select class="form-select" (change)="Changeelement($event)"> <!--i need to change this for tailors-->
+                            <option selected value="0">select Tailors</option>
+                            <option value="Made to measures 1" name="Tailor1" #Tailor1="ngModel" ngModel>Made To Measures
+                            </option>
+                            <option value="Made to measures 2" name="Tailor2" #Tailor2="ngModel" ngModel>Made For Fashion
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-fluid buttonitems-main">
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-success" [disabled]="FormalDresscode.invalid"
+                            type="submit">Proced
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-warning" [disabled]="FormalDresscode.invalid" type="button">Save
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-danger" [disabled]="FormalDresscode.invalid" type="reset">Reset
+                            >></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Blazer -->
+<div class="container mt-4 mb-5" *ngIf="Blazerhiding">
+    <div class="container formcont">
+        <div class="text-center mb-5">
+            <h2>Blazer Measurement</h2>
+        </div>
+        <form #BlazerForm="ngForm" (submit)="BlazerFormGet(BlazerForm.value)">
+
+            <!-- blazer input fields -->
+            <div class="row row-cols-1 row-cols-md-3" style="row-gap: 30px;">
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="WaistInput" class="form-label">Waist</label>
+                        <input type="number" class="form-control" placeholder="Waist Size" id="WaistInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #BlazerWaist="ngModel" name="BlazerWaist"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ChestInput" class="form-label">Chest</label>
+                        <input type="number" class="form-control" id="ChestInput" placeholder="Chest Size" min="0"
+                            oninput="this.value = Math.abs(this.value)" #BlazerChest="ngModel" name="BlazerChest"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="BottomInput" class="form-label">Bottom Of Blazer</label>
+                        <input type="number" class="form-control" placeholder="Bottom Of Blazer Size" id="BottomInput"
+                            min="0" oninput="this.value = Math.abs(this.value)" #BlazerBottom="ngModel"
+                            name="BlazerBottom" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="FirstButtonInput" class="form-label">First Button Position</label>
+                        <input type="number" class="form-control" placeholder="First Button Position Size" min="0"
+                            oninput="this.value = Math.abs(this.value)" id="FirstButtonInput"
+                            #BlazerFirstButton="ngModel" name="BlazerFirstButton" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ShoulderInput" class="form-label">Shoulder</label>
+                        <input type="number" class="form-control" placeholder="Shoulder Size" id="SizeInputShoulder"
+                            min="0" oninput="this.value = Math.abs(this.value)" #BlazerShoulder="ngModel"
+                            name="BlazerShoulder" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ShoulderIndividualInput" class="form-label">Individual Shoulder</label>
+                        <input type="number" class="form-control" placeholder="Individual Shoulder Position"
+                            id="ShoulderIndividualInput" min="0" oninput="this.value = Math.abs(this.value)"
+                            #BlazerIndividualShoulder="ngModel" name="BlazerIndividualShoulder" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="SleevlengthInput" class="form-label">Sleeve Length</label>
+                        <input type="number" class="form-control" placeholder="Sleeve Length Size" id="SleevlengthInput"
+                            min="0" oninput="this.value = Math.abs(this.value)" #BlazerSleevsLength="ngModel"
+                            name="BlazerSleevsLength" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ArmholeInput" class="form-label">Armhole</label>
+                        <input type="number" class="form-control" placeholder="Armhole Size" id="ArmholeInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #BlazerArmhole="ngModel" name="BlazerArmhole"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="BicepsInput" class="form-label">Biceps</label>
+                        <input type="number" class="form-control" placeholder="Biceps Size" id="BicepsInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #BlazerBiceps="ngModel" name="BlazerBiceps"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="CuffInput" class="form-label">Cuff</label>
+                        <input type="number" class="form-control" placeholder="Cuff Size" id="CuffInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #BlazerCuff="ngModel" name="BlazerCuff" ngModel>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="FrontWidthInput" class="form-label">Front Width</label>
+                        <input type="number" class="form-control" placeholder="Front Width Size" id="FrontWidthInput"
+                            min="0" oninput="this.value = Math.abs(this.value)" #BlazerFrontWidth="ngModel"
+                            name="BlazerFrontWidth" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="BackWidthInput" class="form-label">Back Width</label>
+                        <input type="number" class="form-control" placeholder="Back Width Size" id="BackWidthInput"
+                            min="0" oninput="this.value = Math.abs(this.value)" #BlazerBackWidth="ngModel"
+                            name="BlazerBackWidth" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="FrontInput" class="form-label">Blazer Length (Front)</label>
+                        <input type="number" class="form-control" id="FrontInput"
+                            placeholder="Blazer Length (Front) Size" min="0" oninput="this.value = Math.abs(this.value)"
+                            #BlazerFrontLength="ngModel" name="BlazerFrontLength" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="BlazerInput" class="form-label">Blazer Length (Back)</label>
+                        <input type="number" class="form-control" id="BlazerInput"
+                            placeholder="Blazer Length (Back) Size" min="0" oninput="this.value = Math.abs(this.value)"
+                            #BlazerBackLength="ngModel" name="BlazerBackLength" ngModel>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                <div style="width: 99%;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                            style="height: 100px;" name="PantComment" #PantComment="ngModel" ngModel></textarea>
+                        <label for="floatingTextarea">Leave a Comment Here</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procced And Save Button  -->
+            <div *ngIf="ProcedSaveButton02">
+
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div class="col" style="width: 24rem;">
+                        <select class="form-select" (change)="Changeelement($event)"> <!--i need to change this for tailors-->
+                            <option selected value="0">select Tailors</option>
+                            <option value=`{{Tailor1}}` name="Tailor1" #Tailor1="ngModel" ngModel>Made To Measures
+                            </option>
+                            <option value=`{{Tailor2}}` name="Tailor2" #Tailor2="ngModel" ngModel>Made For Fashion
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-fluid buttonitems-main">
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-success" [disabled]="" type="submit">Proced
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-warning" [disabled]="" type="button">Save
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-danger" [disabled]="" type="reset">Reset
+                            >></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Kurta Paijama -->
+<div class="container mt-4 mb-5" style="padding-left: 50px;" *ngIf="KurtaAndPaijamaHidding">
+    <div class="container formcont">
+        <div class="text-center mb-5">
+            <h2>Traditional Kurta & Pyjama Measurement</h2>
+        </div>
+        <form #KurtaPaijama="ngForm" (submit)="SubmitKurtaPaijama(KurtaPaijama.value)">
+
+            <!-- select shirt yes or no -->
+            <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                <div class="col" style="width: 30rem;">
+                    <div>
+                        <h5>What Do You Want To Sweing Kurta & Paijama</h5>
+                    </div>
+                    <div style="width: 24rem;" id="Checkbtn">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                                name="FormalShirtCheckBox" #KurtaCheckBox="ngModel" ngModel
+                                [(ngModel)]="checkboxKurta" (change)="UpdateTextKurta()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Kurta
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckChecked"
+                                name="FormalPantCheckBox" #PyjamaCheckBox="ngModel" ngModel
+                                [(ngModel)]="checkboxPaijama" (change)="UpdateTextKurta()">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Paijama
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Kurta -->
+            <div *ngIf="Kurta">
+                <div class="text-center" style="margin-top: 10px;margin-bottom: 30px;">
+                    <h3>Kurta Measurement</h3>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="row-gap: 30px;">
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="CollarSize" class="form-label">Kurta Collar</label>
+                            <input type="number" class="form-control" placeholder="Kurta Collar Size" id="CollarSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="Kurtacollar"
+                                #Kurtacollar="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ShoulderSize" class="form-label">Kurta Shoulder</label>
+                            <input type="number" class="form-control" placeholder="KurtaShoulder Size" id="ShoulderSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaShoulder"
+                                #KurtaShoulder="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ChestSize" class="form-label">Kurta Chest</label>
+                            <input type="number" class="form-control" id="ChestSize" placeholder="Kurta Chest Size"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaChest"
+                                #KurtaChest="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="WeistSize" class="form-label">Kurta Weist</label>
+                            <input type="number" class="form-control" placeholder="Kurta Weist Size" id="WeistSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaWeist"
+                                #KurtaWeist="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ArmholeSize" class="form-label">Kurta Armhole</label>
+                            <input type="number" class="form-control" placeholder="Kurta Armhole Size" id="ArmholeSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaArmhole"
+                                #KurtaArmhole="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="SLFSize" class="form-label">Kurta Front Length</label>
+                            <input type="number" class="form-control" placeholder="Kurta Front Length Size" id="SLFSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaFrontLength"
+                                #KurtaFrontLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BicepsSize" class="form-label">Kurta Biceps</label>
+                            <input type="number" class="form-control" placeholder="Kurta Biceps Size" id="BicepsSize"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaBiceps"
+                                #KurtaBiceps="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="FWSize" class="form-label">Kurta Sleevs Round</label>
+                            <input type="number" class="form-control" id="FWSize" placeholder="Kurta Sleevs Round"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaSleevsRound"
+                                #KurtaSleevsRound="ngModel" ngModel>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <h5>Full Sleevs</h5>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 10px; row-gap: 30px;">
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="CuffSize" class="form-label">Cuff</label>
+                            <input type="number" class="form-control" id="Cuff Size" placeholder="Cuff Size" min="0"
+                                oninput="this.value = Math.abs(this.value)" name="KurtaFullHandsCuff"
+                                #KurtaFullHandsCuff="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ForearmSize" class="form-label">Forearm</label>
+                            <input type="number" class="form-control" id="ForearmSize" placeholder="Forearm Size"
+                                min="0" oninput="this.value = Math.abs(this.value)" name="KurtaFullHandsForearm"
+                                #KurtaFullHandsForearm="ngModel" ngModel>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div style="width: 99%;">
+                        <div class="form-floating">
+                            <label for="floatingTextarea">Leave a Comment Here</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                                style="height: 100px;" name="KurtaComment" #KurtaComment="ngModel"
+                                ngModel></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Paijama -->
+            <div *ngIf="Paijama">
+                <div class="text-center" style="margin-top: 30px;margin-bottom: 30px;">
+                    <h3>Pyjama Measurements</h3>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="WeistSize" class="form-label">Weist</label>
+                            <input type="number" class="form-control" placeholder="Weist Size" id="WeistSize"
+                                name="PaijamaWeist" #PaijamaWeist="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="LengthSize" class="form-label">Total Length</label>
+                            <input type="number" class="form-control" placeholder="Length Size" id="LengthSize"
+                                name="PaijamaLength" #PaijamaLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="HipSize" class="form-label">Hip</label>
+                            <input type="number" class="form-control" placeholder="Hip Size" id="HipSize"
+                                name="PaijamaHip" #PaijamaHip="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="ThighSize" class="form-label">Thigh</label>
+                            <input type="number" class="form-control" placeholder="Thigh Size" id="ThighSize"
+                                name="PaijamaThighs" #PaijamaThighs="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="KneeSize" class="form-label">Knee</label>
+                            <input type="number" class="form-control" placeholder="Knee Size" id="KneeSize"
+                                name="PaijamaKnee" #PaijamaKnee="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BottomSize" class="form-label">Bottom</label>
+                            <input type="number" class="form-control" placeholder="Bottom Size" id="BottomSize"
+                                name="PaijamaBottom" #PaijamaBottom="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="FrontRaiseSize" class="form-label">Front Raise</label>
+                            <input type="number" class="form-control" placeholder="Front Raise Size" id="FrontRaiseSize"
+                                name="PaijamaFrontRaise" #PaijamaFrontRaise="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BackRaiseSize" class="form-label">Back Raise</label>
+                            <input type="number" class="form-control" placeholder="Back Raise Size" id="BackRaiseSize"
+                                name="PaijamaBackRaise" #PaijamaBackRaise="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="InseamLengthSize" class="form-label">Inseam Length</label>
+                            <input type="number" class="form-control" placeholder="Inseam Length Size"
+                                id="InseamLengthSize" name="PaijamaInseamLength" #PaijamaInseamLength="ngModel" ngModel>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="width: 24rem;">
+                            <label for="BackPockets" class="form-label">Back Pockets</label>
+                            <input type="number" class="form-control" placeholder="Back Pockets minimum-1 maximum-2"
+                                min="1" max="2" id="BackPockets" name="PaijamaBackPockets" #PaijamaBackPockets="ngModel"
+                                ngModel>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div style="width: 99%;">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                                style="height: 100px;" name="PaijamaComment" #PaijamaComment="ngModel"
+                                ngModel></textarea>
+                            <label for="floatingTextarea">Leave a Comment Here</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procced And Save Button  -->
+            <div *ngIf="ProcedSaveButton03">
+
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div class="col" style="width: 24rem;">
+                        <select class="form-select" (change)="Changeelement($event)"> <!--i need to change this for tailors-->
+                            <option selected value="0">select Tailors</option>
+                            <option value=`{{Tailor1}}` name="Tailor1" #Tailor1="ngModel" ngModel>Made To Measures
+                            </option>
+                            <option value=`{{Tailor2}}` name="Tailor2" #Tailor2="ngModel" ngModel>Made For Fashion
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-fluid buttonitems-main">
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-success" type="submit">Proced
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-warning" type="button">Save
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-danger" type="reset">Reset
+                            >></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Sherwani -->
+<div class="container mt-4 mb-5" *ngIf="SherwaniHidding">
+    <div class="container formcont">
+        <div class="text-center mb-5">
+            <h2>Sherwani Measurement</h2>
+        </div>
+        <form #SherwaniForm="ngForm" (submit)="SherwaniFormGet(SherwaniForm.value)">
+
+            <!-- Sherwani input fields -->
+            <div class="row row-cols-1 row-cols-md-3" style="row-gap: 30px;">
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="NeckCollarInput" class="form-label">Neck Collar</label>
+                        <input type="number" class="form-control" placeholder="Neck Collar Size" id="NeckCollarInput"
+                            min="0" oninput="this.value = Math.abs(this.value)" #SherwaniNeckCollar="ngModel"
+                            name="SherwaniNeckCollar" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ChestInput" class="form-label">Chest</label>
+                        <input type="number" class="form-control" id="ChestInput" placeholder="Chest Size" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniChest="ngModel" name="SherwaniChest"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="StomachInput" class="form-label">Stomach</label>
+                        <input type="number" class="form-control" placeholder="Stomach Size" id="StomachInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniStomach="ngModel"
+                            name="SherwaniStomach" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="HipsInput" class="form-label">Hips</label>
+                        <input type="number" class="form-control" placeholder="Hips Size" id="HipsInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniHips="ngModel" name="SherwaniHips"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ShoulderInput" class="form-label">Shoulder</label>
+                        <input type="number" class="form-control" placeholder="Shoulder Size" id="ShoulderInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniShoulder="ngModel"
+                            name="SherwaniShoulder" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ShoulderIndividualInput" class="form-label">Individual Shoulder</label>
+                        <input type="number" class="form-control" placeholder="Individual Shoulder Position"
+                            id="ShoulderIndividualInput" #SherwaniIndividualShoulder="ngModel" min="0"
+                            oninput="this.value = Math.abs(this.value)" name="SherwaniIndividualShoulder" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="SleevlengthInput" class="form-label">Sleeve Length</label>
+                        <input type="number" class="form-control" placeholder="Sleeve Length Size" id="SleevlengthInput"
+                            min="0" oninput="this.value = Math.abs(this.value)" #SherwaniSleevsLength="ngModel"
+                            name="SherwaniSleevsLength" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="ArmholeInput" class="form-label">Armhole</label>
+                        <input type="number" class="form-control" placeholder="Armhole Size" id="ArmholeInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniArmhole="ngModel"
+                            name="SherwaniArmhole" ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="BicepsInput" class="form-label">Biceps</label>
+                        <input type="number" class="form-control" placeholder="Biceps Size" id="BicepsInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniBiceps="ngModel" name="SherwaniBiceps"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="CuffInput" class="form-label">Cuff</label>
+                        <input type="number" class="form-control" placeholder="Cuff Size" id="CuffInput" min="0"
+                            oninput="this.value = Math.abs(this.value)" #SherwaniCuff="ngModel" name="SherwaniCuff"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 24rem;">
+                        <label for="FrontInput" class="form-label">Sherwani Length (Front)</label>
+                        <input type="number" class="form-control" id="FrontInput"
+                            placeholder="Sherwani Length (Front) Size" #SherwaniFrontLength="ngModel" min="0"
+                            oninput="this.value = Math.abs(this.value)" name="SherwaniFrontLength" ngModel>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                <div style="width: 99%;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                            style="height: 100px;" name="SherwaniComment" #SherwaniComment="ngModel" ngModel></textarea>
+                        <label for="floatingTextarea">Leave a Comment Here</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procced And Save Button  -->
+            <div *ngIf="ProcedSaveButton04">
+
+                <div class="row row-cols-1 row-cols-md-3" style="margin-top: 30px; row-gap: 30px;">
+                    <div class="col" style="width: 24rem;">
+                        <select class="form-select" (change)="Changeelement($event)"> <!--i need to change this for tailors-->
+                            <option selected value="0">select Tailors</option>
+                            <option value=`{{Tailor1}}` name="Tailor1" #Tailor1="ngModel" ngModel>Made To Measures
+                            </option>
+                            <option value=`{{Tailor2}}` name="Tailor2" #Tailor2="ngModel" ngModel>Made For Fashion
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-fluid buttonitems-main">
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-success" [disabled]="" type="submit">Proced
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-warning" [disabled]="" type="button">Save
+                            >></button>
+                    </div>
+                    <div class="buttonitems">
+                        <button class="btn btn-outline-danger" [disabled]="" type="reset">Reset
+                            >></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- measurement -->
+<div class="container guide">
+    <h2>Measurement Guid</h2>
+    <ul>
+        <li><a class="btn btn-outline-danger" href="https://www.tailoronten.com/pages/shirt-measurement-guide"
+                target="_blank">Formal Shirt</a></li>
+        <li><a class="btn btn-outline-secondary" href="https://www.tailoronten.com/pages/pants-measurement-guide"
+                target="_blank">Formal Pant</a></li>
+        <li><a class="btn btn-outline-info" href="https://www.tailoronten.com/pages/jacket-measurement-guide"
+                target="_blank">Blazzer</a></li>
+        <li><a class="btn btn-outline-warning" href="https://www.ushafoundation.in/mens-kurta-measurement-chart"
+                target="_blank">Kurta</a></li>
+        <li><a class="btn btn-outline-primary"
+                href="https://sardarpagrihousetraders.com/wp-content/uploads/2022/05/kurta-pajama-measure-1000x700-1.jpg"
+                target="_blank">Pyjama</a></li>
+        <li><a class="btn btn-outline-success" href="https://www.samyakk.com/webforms/mens-sherwani"
+                target="_blank">Sherwani</a></li>
+    </ul>
+</div>
+
+<app-footer></app-footer>

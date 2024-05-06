@@ -1,0 +1,148 @@
+import { HttpClient } from '@angular/common/http';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { AppointmentService } from '../appointment.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ClothService {
+
+
+  cartData2 = new EventEmitter<any[] | []>();
+
+  constructor(private http: HttpClient, private appointment: AppointmentService) { }
+
+  AddingClothProduct(_id: string, clothData: any, image: any): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('image', image);
+    formData.append('ClothName', clothData.ClothName);
+    formData.append('ClothAbout', clothData.ClothAbout);
+    formData.append('ClothQuantities', clothData.ClothQuantities);
+    formData.append('ClothPrice', clothData.ClothPrice);
+    formData.append('ClothTotalWithQuaPrice', clothData.ClothTotalWithQuaPrice);
+
+    return this.http.post(`http://localhost:4500/ClothInsert/${_id}`, formData);
+  }
+
+  GettingCloth(AdminId: any) {
+    return this.http.get(`http://localhost:4500/GettingCloth/${AdminId}`);
+  }
+
+  DeletIngCloth(AdminId: any, ClothId: any) {
+    return this.http.put(`http://localhost:4500/DeletingCloth/${AdminId}`, ClothId);
+  }
+
+  // http://localhost:4500/GettingClothImages/65d39b492eb8902cd2166247/images
+  FetchingAllImages(adminId: any) {
+    return this.http.get(`http://localhost:4500/GettingClothImages/${adminId}/images`);
+  }
+
+  GettingClothFromAdmin(AdminId: any, ClothId: any) {
+    return this.http.get(`http://localhost:4500/GettingClothFromAdmin/${AdminId}/${ClothId}`);
+  }
+  GettingExchangeData: any;
+  Exchange(data: any) {
+    this.GettingExchangeData = data;
+  }
+
+  UpdatingClothProduct(ClothId: string, clothData: any, image: any): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('image', image);
+    formData.append('ClothName', clothData.ClothName);
+    formData.append('ClothAbout', clothData.ClothAbout);
+    formData.append('ClothQuantities', clothData.ClothQuantities);
+    formData.append('ClothPrice', clothData.ClothPrice);
+
+    return this.http.put(`http://localhost:4500/ClothUpdate/${ClothId}`, formData);
+  }
+
+  GettingClothDataByClothId(ClothId: any) {
+    return this.http.get(`http://localhost:4500/GettingDetailCloth/${ClothId}`);
+  }
+
+  // exchanging data between components
+  ClothDataByClothId: any;
+  ClothDataByClothId2: any;
+  setGettingClothData(Data: any) {
+    this.ClothDataByClothId = Data;
+  }
+  setGettingClothData2(Data: any) {
+    this.ClothDataByClothId2 = Data;
+  }
+
+  GetData2() {
+    return this.ClothDataByClothId2;
+  }
+
+  GetData() {
+    return this.ClothDataByClothId;
+  }
+
+  AddtoCart(UserId: any, ClothId: any): Observable<any> {
+    return this.http.post(`http://localhost:4500/Addtocart/${UserId}/${ClothId}`, {});
+  }
+
+  private handleError(error: any) {
+    console.error('API error', error);
+    return throwError('An error occurred, please try again later.');
+  }
+
+  FetchingCart(userId: any) {
+    return this.http.get(`http://localhost:4500/AddtoCartGetting/${userId}`);
+  }
+
+  RemovingClothItem(UserId: any, ClothId: any) {
+    return this.http.put(`http://localhost:4500/RemovingClothItem/${UserId}`, ClothId);
+  }
+
+  UserId: any;
+  getClothItems() {
+    let data = localStorage.getItem('isLoggedIn');
+    let userId = data && JSON.parse(data)._id;
+    this.UserId = userId;
+    return this.FetchingCart(userId);
+  }
+
+  // Updating ClothQuantityUser
+  UpdatingQuantity(UserId: any, ClothId: any, Data: any) {
+    return this.http.put(`http://localhost:4500/updateClothQuantityUser/${UserId}/${ClothId}`, Data);
+  }
+
+  // Updating Price
+
+  UpdatingPrice(): Observable<any> {
+    return this.http.post(`http://localhost:4500/CartPrice/${this.UserId}`, {});
+  }
+
+  // Payment
+  // Payment Create order
+  AdminData : any = localStorage.getItem('AdminLoggin');
+  AdminId:any = this.AdminData && JSON.parse(this.AdminData)._id;
+  CreatingOrder(AddressId: any, PayementId:any, orderid:any, grandTotal: any) {
+    const data = { AddressId, PayementId, orderid}
+    return this.http.post(`http://localhost:4500/CheckOutCartItems/CreateOrder/${this.UserId}/${this.AdminId}/${grandTotal}`, data);
+  }
+
+  // Time
+  GettingTime() {
+    return this.http.get('http://localhost:4500/GetingTime', {});
+  }
+
+  // Order book
+  GettingNotification(){
+    let data = localStorage.getItem('isLoggedIn');
+    let user = data && JSON.parse(data)._id;
+    return this.http.get(`http://localhost:4500/Notification/${user}`);
+  }
+
+  // Delivery msg
+  DeliveryMsg(userId:any, OrderId:any){
+    let data = localStorage.getItem('AdminLoggin')
+    let data2 = data && JSON.parse(data)._id;
+    return this.http.post(`http://localhost:4500/send/Delivery/message/${userId}/${OrderId}/${data2}`, {});
+  }
+
+  
+}

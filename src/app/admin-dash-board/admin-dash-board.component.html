@@ -1,0 +1,90 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <div class="container">
+        <h2 class="text-center"
+            style="font-weight: 800;font-size: 32px;letter-spacing: 1.5px; margin-left: 300px;margin-top: 20px;margin-bottom: 20px;">
+            Admin Dashboard</h2>
+    </div>
+    <div class="center">
+        <div class="container01 rounded-4">
+            <h4>Appointment</h4>
+            <!-- Progress bar 1 -->
+            <div class="container d-flex justify-content-center mt-4">
+                <div role="progressbar" [attr.aria-valuenow]="AppointmentLength" aria-valuemin="0" aria-valuemax="100" style="--value: {{AppointmentLength}}">
+                </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <!-- <div class="row text-center mt-3">
+                <div class="col-6 border-right">
+                    <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
+                </div>
+                <div class="col-6">
+                    <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
+                </div>
+            </div> -->
+            <!-- END -->
+        </div>
+        <div class="container02 rounded-4">
+            <h4>Users</h4>
+            <div class="flexing">
+                <div style="margin-top: 30px;">
+                    <span> <span style="font-weight: 800;font-size: 40px;padding-left: 30px;">{{Userlength}}</span>
+                        <span style="font-weight: 800;font-size: 24px;padding-left: 5px;">Users</span> </span>
+                    <img style="float: right; padding-right:30px; border-radius: 50%; " src="../../assets/bg-img-02.jpg"
+                        width="150px" height="100px" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container03 rounded-4">
+            <h4>Tailors</h4>
+            <!-- Progress Bar 03 -->
+            <div class="container d-flex justify-content-center mt-4">
+                <div role="progressbar" [attr.aria-valuenow]="TailorsLength" aria-valuemin="0" aria-valuemax="100" style="--value: {{TailorsLength}}">
+                </div>
+            </div>
+            <!-- end -->
+
+            <!-- Demo info -->
+            <!-- <div class="row text-center mt-3">
+                <div class="col-6 border-right">
+                    <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-black">Last week</span>
+                </div>
+                <div class="col-6">
+                    <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-black">Last month</span>
+                </div>
+            </div> -->
+            <!-- END -->
+        </div>
+        <div class="container04 rounded-4">
+            <h4>Designs</h4>
+            <div class="flexing">
+                <div style="margin-top: 30px;">
+                    <span> <span style="font-weight: 800;font-size: 40px;padding-left: 10px;">{{TotalStock}}</span>
+                        <span style="font-weight: 800;font-size: 24px;padding-left: 5px;">Cloth Products</span> </span>
+                    <img style="float: right; padding-right:30px; border-radius: 50%; " src="../../assets/bg-img-02.jpg"
+                        width="150px" height="100px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <div class="center2">
+        <div class="cont-main-01">
+            <h4 class="text-center p-3" style="letter-spacing: 2px;font-weight: 700;">Orders Monthly Raising</h4>
+            <svg height="280px" style="width: 500px; margin-left:30px" viewBox="0 0 2000 1000"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 1000h80v-6.185q0-4-4-4H4q-4 0-4 4ZM100 1000h80v-46.941q0-4-4-4h-72q-4 0-4 4ZM200 1000h80v-49.079q0-4-4-4h-72q-4 0-4 4ZM300 1000h80v-85.335q0-4-4-4h-72q-4 0-4 4ZM400 1000h80V805.129q0-4-4-4h-72q-4 0-4 4ZM500 1000h80V826.164q0-4-4-4h-72q-4 0-4 4ZM600 1000h80V746.658q0-4-4-4h-72q-4 0-4 4ZM700 1000h80V784.187q0-4-4-4h-72q-4 0-4 4ZM800 1000h80V729.344q0-4-4-4h-72q-4 0-4 4ZM900 1000h80V539.633q0-4-4-4h-72q-4 0-4 4ZM1000 1000h80V710.639q0-4-4-4h-72q-4 0-4 4ZM1100 1000h80V583.326q0-4-4-4h-72q-4 0-4 4ZM1200 1000h80V462.425q0-4-4-4h-72q-4 0-4 4ZM1300 1000h80V486.168q0-4-4-4h-72q-4 0-4 4ZM1400 1000h80V282.083q0-4-4-4h-72q-4 0-4 4ZM1500 1000h80V352.209q0-4-4-4h-72q-4 0-4 4ZM1600 1000h80V523.99q0-4-4-4h-72q-4 0-4 4ZM1700 1000h80V497.581q0-4-4-4h-72q-4 0-4 4ZM1800 1000h80V320.545q0-4-4-4h-72q-4 0-4 4ZM1900 1000h80V15.921q0-4-4-4h-72q-4 0-4 4Z"
+                    fill="#48a61d" />
+            </svg>
+        </div>
+        <div class="cont-main-02">
+            <h4 class="text-center p-3" style="letter-spacing: 2px;font-weight: 700;">Past Orders Completed </h4>
+            <img src="../../assets/graph02.png" width="500px" height="600px"
+                style="margin-top: -170px;margin-left: 60px;" alt="">
+        </div>
+    </div> -->
+
+</div>

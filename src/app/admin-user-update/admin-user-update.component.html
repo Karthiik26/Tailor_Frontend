@@ -1,0 +1,51 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container" style="top: auto; left: 140px; position: relative; width: 100%;height: 100%;">    
+    <div class="container mt-3" >
+        <h2 style="text-align: center;font-weight: 800;letter-spacing: 3px;" >Update User Details</h2>
+    </div>
+
+    <div class="container container-main p-3">
+        <form>
+            <div class="form-floating mb-3 txting">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Tailor Name" >
+                <label for="floatingInput">User Name</label>
+            </div>
+            <div class="form-floating mb-3 txting">
+                <input type="email" class="form-control " id="floatingInput" placeholder="ABC@GMAIL.COM">
+                <label for="floatingInput">Email Id</label>
+            </div>           
+            <div class="form-floating mb-3 txting">
+                <input type="text" class="form-control " id="floatingInput" placeholder="Full Adress">
+                <label for="floatingInput">Adresss</label>
+            </div>
+            <div class="form-floating mb-3 txting">
+                <input type="number" class="form-control " id="floatingInput" placeholder="Phone Number">
+                <label for="floatingInput">Phone</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="button" class="btn btn-outline-success fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Update
+                  </button>
+                <button class="btn btn-outline-primary fs-5" type="button" routerLink="/ManageUser" >Show All</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalflexingitem" >
+      <div class="modal-content changingbg">
+        <div class="modal-header">
+          <h5 class="modal-title"  style="color: green;" id="exampleModalLabel">Your Tailor Was SuccessFully Updated</h5>
+          <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- <div class="modal-body" style="color: green;" >
+          Go To Inventry 
+        </div> -->
+        <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

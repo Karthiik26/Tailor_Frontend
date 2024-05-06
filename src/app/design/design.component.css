@@ -1,0 +1,161 @@
+.row {
+    width: 100%;
+    justify-content: space-around;
+    margin: 20px 5px;
+}
+
+/* box 1 */
+.box-1 {
+    max-width: 400px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    display: flex;
+}
+
+.wide-box {
+    margin: 10px;
+}
+
+#bgImage {
+    background: url(../../assets/bg-grad-03.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    background-size: cover;
+    padding: 45px 35px;
+    font-size: 40px;
+    border-radius: 30px;
+    color: white;
+}
+
+/* box 2 */
+.box-2 {
+    max-width: 400px;
+    border: 1px solid lightgrey;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    /* padding: 20px 15px; */
+    border-radius: 10px;
+}
+
+.box {
+    margin: 10px;
+}
+
+/* box 3 */
+.box-3 {
+    max-width: 400px;
+    height: auto;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.box-main {
+    margin: 10px auto;
+    object-fit: cover;
+}
+
+.row img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 5px auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* hovring imgs */
+
+.box-1 img {
+    border-radius: 10px;
+    transition: 0.5s all ease-in-out;
+}
+
+.box-1 img:hover {
+    transform: scale(1.02);
+    border-radius: 10px;
+}
+
+.box-2 img {
+    border-radius: 10px;
+    transition: 0.5s all ease-in-out;
+}
+
+.box-2 img:hover {
+    border-radius: 10px;
+    transform: scale(1.07);
+}
+
+.box-3 img {
+    border-radius: 10px;
+    transition: 0.5s all ease-in-out;
+}
+
+.box-3 img:hover {
+    transform: scale(1.02);
+    border-radius: 10px;
+}
+
+.marginsetting {
+    margin: 5px auto;
+}
+
+/* 2nd container */
+.box-2-03{
+    display: none;
+}
+.box-3-02 img{
+    border-radius: 10px;
+}
+.box-3-03 img{
+    border-radius: 100%;
+}
+/* .box-3-01 img{
+    border-radius: 100%;
+} */
+.box-3-04 img{
+    border-radius: 100%;
+}
+.box-3-02 img:hover{
+    transform: scale(1.05);
+}
+.box-3-03 img:hover{
+    border-radius: 100%;
+    transform: scale(1.1);
+}
+/* .box-3-01 img:hover{
+    border-radius: 100%;
+    transform: scale(1.1);
+} */
+.box-3-04 img:hover{
+    border-radius: 100%;
+    transform: scale(1.1);
+}
+
+/* craousal */
+.carousel{
+    height: 530px;
+    width: 90%;
+    border-radius: 30px;
+    box-shadow: 0px 5px 20px gray;
+}
+.carousel img{
+    border-radius: 30px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.card img{
+    height: 200px;
+}
+.card .btn{
+    padding: 8px 12px;
+}
+.card-body {
+    height: 240px;
+}
+.card-title {
+    overflow-x: hidden;
+    text-wrap: wrap;
+}

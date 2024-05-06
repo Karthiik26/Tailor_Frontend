@@ -1,0 +1,135 @@
+<app-nav-bar nameinp={{username}} UserImg={{UserImage}}></app-nav-bar>
+
+<div id="heading1">
+    <h1>Users Profile</h1>
+</div>
+
+
+<div class="container container1">
+    <div class="inner-container2" *ngIf="GettingData">
+        <h2>My Account</h2>
+        <!-- <img [src]="getImageSource(GettingData.UserImage)" width="70px" height="100px" alt=""> -->
+        <ul class="options">
+            <li><a (click)="Display()">Your Profile</a></li>
+            <li><a (click)="myAccount()">Update Profile</a></li>
+            <li><a (click)="Update()">Change Password</a></li>
+        </ul>
+    </div>
+
+    <div class="inner-container3">
+        <div class="p-3" *ngIf="ShowMyProfile">
+            <!-- your profile  -->
+            <div class="Profile2">
+                your profile
+            </div>
+            <div class="Profile" *ngIf="GettingData">
+                <div class="Profile3">
+                    Personal Details
+                </div>
+                <div class="item1">
+                    UserName : {{GettingData.UserName}}
+                </div>
+                <div class="item1">
+                    Your Name : {{GettingData.FirstName}} {{GettingData.LastName}}
+                </div>
+                <div class="item1">
+                    Phone No : {{GettingData.Phone}}
+                </div>
+                <div class="item1">
+                    Email Id : {{GettingData.Email}}
+                </div>
+            </div>
+            <div class="Profile" *ngIf="AddressData">
+                <div class="Profile3">
+                    Address Details
+                </div>
+                <div class="item1">
+                    Address 1 : - {{AddressData.Address1}}
+                </div>
+                <div class="item1">
+                    Address 2 : - {{AddressData.Address2}}
+                </div>
+                <div class="item1">
+                    City : - {{AddressData.Address2}} {{AddressData.State}}, {{AddressData.Pincode}}
+                </div>
+                <div class="item1">
+                    Alternate Phone No : {{AddressData.Phone2}}
+                </div>
+            </div>
+        </div>
+        <div class="p-3" *ngIf="ShowUpdate">
+            <form #UpdateUser="ngForm" (ngSubmit)="UpdateUserval(UpdateUser.value)">
+                <div class="Profile">
+                    <div class="Profile3">
+                        Update Your Profile
+                    </div>
+                </div>
+                <div class="Profile" *ngIf="GettingData">
+                    <div class="item1 serial">
+                        <!-- <input class="form-control-lg" type="file" id="formFile" name="UserImage" #UserImage > -->
+                    </div>
+                    <div class="item1 serial" style="display: flex;flex-direction: row;gap: 10px;">
+                        <input type="text" class="form-control" placeholder="Change your First Name" alt=""
+                            #FirstName="ngModel" name="FirstName" ngModel="{{GettingData?.FirstName}}">
+                        <input type="text" class="form-control" placeholder="Change your Last Name" alt=""
+                            #LastName="ngModel" name="LastName" ngModel="{{GettingData?.LastName}}">
+                    </div>
+                    <div class="item1 serial">
+                        <input type="email" class="form-control" placeholder="Change your Email Id" alt="" name="Email"
+                            #Email="ngModel" ngModel="{{GettingData?.Email}}">
+                    </div>
+                    <div class="item1 serial">
+                        <input type="number" class="form-control" placeholder="Change your Phone Number" alt=""
+                            #Phone="ngModel" name="Phone" ngModel="{{GettingData?.Phone}}">
+                    </div>
+                </div>
+                <div class="Profile">
+                    <div class="Profile3">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="p-3" *ngIf="ShowChange">
+            <div class="Profile">
+                <div class="Profile3">
+                    Change Your Password
+                </div>
+            </div>
+            <form #GettingData="ngForm" (ngSubmit)="UpdatePassword(GettingData.value)">
+                <div class="Profile">
+                    
+                    <div class="item1 serial" >
+                        <input type="password" class="form-control" placeholder="Enter Your Old Password" name="old"
+                            #old="ngModel" ngModel required minlength="8">
+                        <div *ngIf="old?.invalid && (old?.dirty || old?.touched)" class="text-danger">
+                            <div *ngIf="old?.errors?.['required']">Old Password is required.</div>
+                            <div *ngIf="old?.errors?.['minlength']">Old Password must be at least 8 characters long.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="item1 serial">
+                        <input type="password" class="form-control" placeholder="Your New Password" name="newpass"
+                            #newpass="ngModel" ngModel required minlength="8">
+                        <div *ngIf="newpass?.invalid && (newpass?.dirty || newpass?.touched)" class="text-danger">
+                            <div *ngIf="newpass?.errors?.['required']">New Password is required.</div>
+                            <div *ngIf="newpass?.errors?.['minlength']">New Password must be at least 8 characters long.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Profile">
+                    <div class="Profile3">
+                        <button class="btn btn-primary" type="submit">Change Your Password</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,22 @@
+.box1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+    gap: 20px;
+}
+.modalflexingitem1{
+    position: relative;
+    top: 700px;
+    right: -550px;
+}
+.modalflexingitem2{
+    position: relative;
+    top: 150px;
+    right: 0px;
+}
+.modalflexingitem3{
+    position: relative;
+    top: 300px;
+    right: 0px;
+}
