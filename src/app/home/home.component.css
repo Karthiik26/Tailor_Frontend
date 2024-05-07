@@ -1,7 +1,7 @@
 /* matrerial google font */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
-*{
+* {
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     /* font-weight: 800; */
@@ -25,43 +25,41 @@
 }
 
 /* typing animation */
-.typed-text{
+.typed-text {
     letter-spacing: 0.1rem;
 }
+
 .cursor {
     display: inline-block;
     background-color: #ccc;
     margin-left: 0.1rem;
     width: 3px;
     animation: blink 1s infinite;
-  }
-  .cursor {
-    display: inline-block;
     width: 0.1em;
     height: 0.9em;
     margin-right: 0.1em;
     background-color: white;
     animation: blink 1s infinite;
-  }
+}
 
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
     }
+
     50% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
+}
+
 .wrapper {
     /* margin-top: -300px; */
     margin-left: 630px;
     font-size: 35.5px;
     font-stretch: extra-expanded;
     font-weight: 900;
-}
-
-/* animation text */
-.wrapper {
     height: auto;
     /*This part is important for centering*/
     display: grid;
@@ -102,37 +100,6 @@
     font-weight: 400;
 }
 
-#searchinp {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    padding: 6px;
-}
-
-#searchinp:focus {
-    box-shadow: none;
-    border: none;
-}
-
-#button-addon2 {
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    padding: 6px;
-    background-color: white;
-}
-
-#search-container {
-    margin-top: 0px;
-    margin-left: 300px;
-}
-
-#explore {
-    margin-top: 30px;
-    text-align: center;
-    margin-left: 600px;
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-}
 
 /* 2nd container  **********************************************   */
 #container-02 {
@@ -150,13 +117,6 @@
     /* margin-bottom: 100px; */
     margin-top: 40px;
     margin-bottom: 30px;
-}
-
-.topdesigns {
-    margin-top: 110px; 
-    margin-bottom: 40px;
-    font-weight: 600; 
-    font-size: 40px;
 }
 
 .container {
@@ -247,31 +207,15 @@
 
 /* Hide scrollbar for webkit browsers */
 
-.overflowing::-webkit-scrollbar{
+.overflowing::-webkit-scrollbar {
     /* display: none; */
     height: 8px
-}
-
-.overflowing::-webkit-scrollbar-thumb {
-    /* background-color: lightgray; */
 }
 
 .overflowing::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.boxing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 50px;
-    background-color: #d3d3d3;
-    height: 380px;
-    width: 280px;
-    padding: 20px;
-    border-radius: 20px;
-}
 
 .boxing-01 {
     display: flex;
@@ -310,10 +254,6 @@
     border: none;
 }
 
-.boxing img {
-    height: 320px;
-}
-
 .text-cont {
     text-align: center;
     /* border: 1px solid black; */
@@ -349,22 +289,27 @@
     background-size: cover;
     background-attachment: fixed;
 }
-#side-01 .btn-txt{
+
+#side-01 .btn-txt {
     width: 100%;
 }
-#side-01 h3{
+
+#side-01 h3 {
     text-align: center;
     color: white;
 }
-#side-01 button{
-    float:right;
+
+#side-01 button {
+    float: right;
     margin: 30px;
 }
-#side-02 button{
-    float:left;
+
+#side-02 button {
+    float: left;
     margin: 30px;
 }
-.btn-txt{
+
+.btn-txt {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -372,10 +317,12 @@
     margin-top: 200px;
     width: 70%;
 }
-#side-02 h3{
+
+#side-02 h3 {
     text-align: center;
     color: white;
 }
+
 #side-01 img {
     width: 100%;
     height: 100%;
@@ -412,22 +359,20 @@
     object-fit: cover;
     transition: 0.5s all ease-in-out;
 }
-.cont-07-header{
+
+.cont-07-header {
     /* margin: 60px 0px 20px 0px; */
-    font-weight: 600; 
-    margin-top: 70px; 
-    margin-bottom: 60px;
-    font-size: 40px;
-}
-.toptailor{
-    margin-top: 70px; 
-    margin-bottom: 60px;
     font-weight: 600;
+    margin-top: 70px;
+    margin-bottom: 60px;
     font-size: 40px;
 }
 
-#side-01:hover {
-    /* transform: scale(1.01); */
+.toptailor {
+    margin-top: 70px;
+    margin-bottom: 60px;
+    font-weight: 600;
+    font-size: 40px;
 }
 
 #side-02:hover {
@@ -436,7 +381,6 @@
 
 /* 8th container *********************************************** */
 #container-08 {
-    /* background-color: yellow; */
     height: 450px;
 }
 
@@ -463,23 +407,22 @@
     font-size: 23px;
     font-weight: 400;
 }
-.content-appointment h3{
+
+.content-appointment h3 {
     margin-top: 10px;
     font-weight: 900;
 }
-.content-appointment span{
+
+.content-appointment span {
     float: left;
 }
+
 .content-tailors {
-    /* width: 100%;
-    letter-spacing: 3px;
-    line-height: 50px; */
     margin-top: -30px;
     text-transform: capitalize;
-    /* font-size: 23px;
-    font-weight: 400; */
     margin-bottom: 50px;
 }
+
 .content-Cloths {
     text-transform: capitalize;
     margin-top: 10px;
