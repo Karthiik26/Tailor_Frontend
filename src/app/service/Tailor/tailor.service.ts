@@ -21,7 +21,7 @@ export class TailorService {
     formData.append('ToTime', data.ToTime);
     formData.append('TailorAbout', data.TailorAbout);
     formData.append('TailorImage', Image);
-    return this.http.post<any>('http://localhost:4500/TailorSignUp', formData);
+    return this.http.post<any>('https://tailor-backend-hqfi.onrender.com/TailorSignUp', formData);
   }
 
   Login(tailorName: string, tailorPassword: string, tailorEmail: string): Observable<any> {
@@ -30,39 +30,39 @@ export class TailorService {
       TailorPassword: tailorPassword,
       TailorEmail: tailorEmail
     };
-    return this.http.post<any>('http://localhost:4500/TailorLogin', body);
+    return this.http.post<any>('https://tailor-backend-hqfi.onrender.com/TailorLogin', body);
   }
 
   FetchingTailors() {
-    return this.http.get('http://localhost:4500/GettingTaiors');
+    return this.http.get('https://tailor-backend-hqfi.onrender.com/GettingTaiors');
   }
 
   DeleteTailor(data:any){
-    return this.http.delete(`http://localhost:4500/Delete/Tailor/${data}`);
+    return this.http.delete(`https://tailor-backend-hqfi.onrender.com/Delete/Tailor/${data}`);
   }
 
   FetchingTailorsById(){
     let data = localStorage.getItem('TailorLoggin');
     let TailorId = data && JSON.parse(data)._id;
-    return this.http.get(`http://localhost:4500/GettingTailorId/${TailorId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingTailorId/${TailorId}`);
   }
 
   GettingTailorById(TailorId:any){
-    return this.http.get(`http://localhost:4500/GettingTailorId/${TailorId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingTailorId/${TailorId}`);
   }
 
   GettingAppointmentsLength() : Observable<any> {
-    return this.http.get('http://localhost:4500/ConfirmedGettingAppointment');
+    return this.http.get('https://tailor-backend-hqfi.onrender.com/ConfirmedGettingAppointment');
   }
 
   // Change password tailors
 
   Chnagepass(id:any, old:any , newpass:any){
-    return this.http.post(`http://localhost:4500/changeTailorpassword/${id}`, {old , newpass})
+    return this.http.post(`https://tailor-backend-hqfi.onrender.com/changeTailorpassword/${id}`, {old , newpass})
   }
 
   // Update tailor
   UpdateTailor(id:any, data:any){
-    return this.http.put(`http://localhost:4500/tailorUpdate/${id}`, data)
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/tailorUpdate/${id}`, data)
   }
 }

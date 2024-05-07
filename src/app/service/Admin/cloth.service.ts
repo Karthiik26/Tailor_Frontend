@@ -23,24 +23,24 @@ export class ClothService {
     formData.append('ClothPrice', clothData.ClothPrice);
     formData.append('ClothTotalWithQuaPrice', clothData.ClothTotalWithQuaPrice);
 
-    return this.http.post(`http://localhost:4500/ClothInsert/${_id}`, formData);
+    return this.http.post(`https://tailor-backend-hqfi.onrender.com/ClothInsert/${_id}`, formData);
   }
 
   GettingCloth(AdminId: any) {
-    return this.http.get(`http://localhost:4500/GettingCloth/${AdminId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingCloth/${AdminId}`);
   }
 
   DeletIngCloth(AdminId: any, ClothId: any) {
-    return this.http.put(`http://localhost:4500/DeletingCloth/${AdminId}`, ClothId);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/DeletingCloth/${AdminId}`, ClothId);
   }
 
-  // http://localhost:4500/GettingClothImages/65d39b492eb8902cd2166247/images
+  // https://tailor-backend-hqfi.onrender.com/GettingClothImages/65d39b492eb8902cd2166247/images
   FetchingAllImages(adminId: any) {
-    return this.http.get(`http://localhost:4500/GettingClothImages/${adminId}/images`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingClothImages/${adminId}/images`);
   }
 
   GettingClothFromAdmin(AdminId: any, ClothId: any) {
-    return this.http.get(`http://localhost:4500/GettingClothFromAdmin/${AdminId}/${ClothId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingClothFromAdmin/${AdminId}/${ClothId}`);
   }
   GettingExchangeData: any;
   Exchange(data: any) {
@@ -55,11 +55,11 @@ export class ClothService {
     formData.append('ClothQuantities', clothData.ClothQuantities);
     formData.append('ClothPrice', clothData.ClothPrice);
 
-    return this.http.put(`http://localhost:4500/ClothUpdate/${ClothId}`, formData);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/ClothUpdate/${ClothId}`, formData);
   }
 
   GettingClothDataByClothId(ClothId: any) {
-    return this.http.get(`http://localhost:4500/GettingDetailCloth/${ClothId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingDetailCloth/${ClothId}`);
   }
 
   // exchanging data between components
@@ -81,7 +81,7 @@ export class ClothService {
   }
 
   AddtoCart(UserId: any, ClothId: any): Observable<any> {
-    return this.http.post(`http://localhost:4500/Addtocart/${UserId}/${ClothId}`, {});
+    return this.http.post(`https://tailor-backend-hqfi.onrender.com/Addtocart/${UserId}/${ClothId}`, {});
   }
 
   private handleError(error: any) {
@@ -90,11 +90,11 @@ export class ClothService {
   }
 
   FetchingCart(userId: any) {
-    return this.http.get(`http://localhost:4500/AddtoCartGetting/${userId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/AddtoCartGetting/${userId}`);
   }
 
   RemovingClothItem(UserId: any, ClothId: any) {
-    return this.http.put(`http://localhost:4500/RemovingClothItem/${UserId}`, ClothId);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/RemovingClothItem/${UserId}`, ClothId);
   }
 
   UserId: any;
@@ -107,13 +107,13 @@ export class ClothService {
 
   // Updating ClothQuantityUser
   UpdatingQuantity(UserId: any, ClothId: any, Data: any) {
-    return this.http.put(`http://localhost:4500/updateClothQuantityUser/${UserId}/${ClothId}`, Data);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/updateClothQuantityUser/${UserId}/${ClothId}`, Data);
   }
 
   // Updating Price
 
   UpdatingPrice(): Observable<any> {
-    return this.http.post(`http://localhost:4500/CartPrice/${this.UserId}`, {});
+    return this.http.post(`https://tailor-backend-hqfi.onrender.com/CartPrice/${this.UserId}`, {});
   }
 
   // Payment
@@ -122,26 +122,26 @@ export class ClothService {
   AdminId:any = this.AdminData && JSON.parse(this.AdminData)._id;
   CreatingOrder(AddressId: any, PayementId:any, orderid:any, grandTotal: any) {
     const data = { AddressId, PayementId, orderid}
-    return this.http.post(`http://localhost:4500/CheckOutCartItems/CreateOrder/${this.UserId}/${this.AdminId}/${grandTotal}`, data);
+    return this.http.post(`https://tailor-backend-hqfi.onrender.com/CheckOutCartItems/CreateOrder/${this.UserId}/${this.AdminId}/${grandTotal}`, data);
   }
 
   // Time
   GettingTime() {
-    return this.http.get('http://localhost:4500/GetingTime', {});
+    return this.http.get('https://tailor-backend-hqfi.onrender.com/GetingTime', {});
   }
 
   // Order book
   GettingNotification(){
     let data = localStorage.getItem('isLoggedIn');
     let user = data && JSON.parse(data)._id;
-    return this.http.get(`http://localhost:4500/Notification/${user}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/Notification/${user}`);
   }
 
   // Delivery msg
   DeliveryMsg(userId:any, OrderId:any){
     let data = localStorage.getItem('AdminLoggin')
     let data2 = data && JSON.parse(data)._id;
-    return this.http.post(`http://localhost:4500/send/Delivery/message/${userId}/${OrderId}/${data2}`, {});
+    return this.http.post(`https://tailor-backend-hqfi.onrender.com/send/Delivery/message/${userId}/${OrderId}/${data2}`, {});
   }
 
   

@@ -9,12 +9,12 @@ export class OrdersService {
   constructor(private http : HttpClient) { }
 
   GettingOrderDetails(AdminId:any){
-    return this.http.get(`http://localhost:4500/Admin/Orders/${AdminId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/Admin/Orders/${AdminId}`);
   }
 
   // Cancellingorder
   OrderCancelling( UserId:any, AdminId:any, OrderId:any){
-    return this.http.put(`http://localhost:4500/CancellIng/${UserId}/${AdminId}` , { OrderId: OrderId }, {responseType: 'text'});
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/CancellIng/${UserId}/${AdminId}` , { OrderId: OrderId }, {responseType: 'text'});
   }
   
   ClothDataByClothId: any;

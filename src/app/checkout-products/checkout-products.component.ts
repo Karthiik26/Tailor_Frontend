@@ -274,7 +274,7 @@ export class CheckoutProductsComponent implements OnInit {
   // PaymentIntegration------------------------------------------------------------------ RAZORPAY
   orderid: any;
   createRazpayOrder() {
-    this.http.post(`http://localhost:4500/CreateOrder`, { amount: this.GettingTotal2 }).subscribe({
+    this.http.post(`https://tailor-backend-hqfi.onrender.com/CreateOrder`, { amount: this.GettingTotal2 }).subscribe({
       next: (res: any) => {
         console.log("Order Response created", res.orderId);
         this.orderid = res.orderId;
@@ -310,7 +310,7 @@ export class CheckoutProductsComponent implements OnInit {
     options.handler = ((response: any, error: any) => {
       options.response = response;
       const paymentId = response.razorpay_payment_id;
-      this.http.post('http://localhost:4500/Success', { orderId, paymentId }).subscribe({
+      this.http.post('https://tailor-backend-hqfi.onrender.com/Success', { orderId, paymentId }).subscribe({
         next: (value: any) => {
           console.log("Suucess Response", value);
           console.log("Suucess Response", value.paymentId);
