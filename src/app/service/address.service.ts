@@ -10,23 +10,23 @@ export class AddressService {
 
 
   FetchingData(Data:any){
-    return this.http.get(`http://localhost:4500/UserDetails/${Data}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/UserDetails/${Data}`);
   }
   
   AddAddress(Userid:any, AddAddress:any){
-    return this.http.put(`http://localhost:4500/Address/${Userid}`, AddAddress);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/Address/${Userid}`, AddAddress);
   }
 
   DeletingAddress(userid:any, addressid:any){
-    return this.http.put(`http://localhost:4500/DeletingAddress/${userid}`, addressid);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/DeletingAddress/${userid}`, addressid);
   }
 
   GettingParticularAddress(UserId:any, AddresId:any){
-    return this.http.get(`http://localhost:4500/GettingAddressFromUser/${UserId}/${AddresId}`);
+    return this.http.get(`https://tailor-backend-hqfi.onrender.com/GettingAddressFromUser/${UserId}/${AddresId}`);
   }
 
   UpdatingAddress(userId:any, AddressId:any, Data:any){
-    return this.http.put(`http://localhost:4500/AddressUpdate/${userId}/${AddressId}`, Data);
+    return this.http.put(`https://tailor-backend-hqfi.onrender.com/AddressUpdate/${userId}/${AddressId}`, Data);
   }
 
 }
