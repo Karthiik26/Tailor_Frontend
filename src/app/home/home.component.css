@@ -39,7 +39,7 @@
     margin-right: 0.1em;
     background-color: white;
     animation: blink 1s infinite;
-}
+} 
 
 .wrapper {
     /* margin-top: -300px; */
@@ -51,16 +51,6 @@
     /*This part is important for centering*/
     display: grid;
     place-items: center;
-}
-
-.typing-demo {
-    width: 820px;
-    animation: typing 3s steps(40), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    /* font-family: 'Rubik Doodle Shadow', system-ui; */
 }
 
 /* 1st container maintext */
@@ -329,11 +319,6 @@
     text-transform: capitalize;
     font-size: 23px;
     font-weight: 400;
-}
-
-.content-appointment h3 {
-    margin-top: 10px;
-    font-weight: 900;
 }
 
 .content-appointment span {

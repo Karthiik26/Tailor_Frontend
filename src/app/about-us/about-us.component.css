@@ -241,7 +241,7 @@
   margin-left: 0px;
   line-height: 27px;
 }
-
+ 
 .position {
   line-height: 26px;
   color: rgb(0, 166, 127);
@@ -250,12 +250,6 @@
   margin-right: 0px;
   margin-bottom: 20px;
   margin-left: 0px;
-}
-
-.testimonial {
-  color: rgb(122, 122, 122);
-  font-size: 18px;
-  line-height: 27px;
 }
 
 .outer-container {
@@ -340,14 +334,7 @@
 }
 
 .allText {
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 40px;
+  padding: 0 0 0 0;
   width: 42%;
   margin: 0 0 0 0;
 }
@@ -414,21 +401,6 @@
   margin: 0 40px 0 0;
 }
 
-.allText {
-  width: 100%;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
 
 .responsive-container-block.Container {
   flex-direction: column;
