@@ -330,13 +330,15 @@ export class CheckoutProductsComponent implements OnInit {
     rzp.open();
   }
 
+  AdminId=`65d39b492eb8902cd2166247`;
+
   PaymentPostingIntoDb(PaymentId: any) {
     this.clothservice.CreatingOrder(this.FinalAddres, PaymentId, this.orderid, this.GettingTotal2).subscribe({
       next: (value: any) => {
         console.log("successfullyy Inserted In to db", value);
         this.clothservice.setGettingClothData(this.paymentId);
         this.clothservice.setGettingClothData2(this.orderid);
-        this.orderservice.GettingOrderDetails(`65d39b492eb8902cd2166247`);
+        this.orderservice.GettingOrderDetails(this.AdminId);
         this.router.navigate(['Thank-You']);
         this.GettingOrdersDetails();
       }, error: (err) => {
@@ -346,9 +348,7 @@ export class CheckoutProductsComponent implements OnInit {
   }
 
   GettingOrdersDetails(){
-    let user = localStorage.getItem('AdminLoggin');
-     let data = user && JSON.parse(user)._id;
-   this.orderservice.GettingOrderDetails(data).subscribe((res)=>{
+   this.orderservice.GettingOrderDetails(this.AdminId).subscribe((res)=>{
      console.log(res);
      this.orderservice.setGettingClothData(res);
    });
