@@ -16,7 +16,7 @@ export class DesignComponent {
 
   cssimageItem: any = false;
   ClothData: any;
-  AdminId: any;
+  AdminId: any =`65d39b492eb8902cd2166247`;
   ClothAdda: any;
   clothnumber: any;
 
@@ -28,11 +28,11 @@ export class DesignComponent {
 
   // fetching cloth images
   FetchingClothImageArray() {
-    let localstorage = localStorage.getItem('AdminLoggin');
-    let AdminId = localstorage && JSON.parse(localstorage)._id;
-    console.log(AdminId);
-    this.AdminId = AdminId;
-    this.clothservice.FetchingAllImages(AdminId).subscribe(
+    // let localstorage = localStorage.getItem('AdminLoggin');
+    // let AdminId = localstorage && JSON.parse(localstorage)._id;
+    // console.log(AdminId);
+    // this.AdminId;
+    this.clothservice.FetchingAllImages(this.AdminId).subscribe(
       {
         next: (res: any) => {
           console.log("resonspse in cloth image");
