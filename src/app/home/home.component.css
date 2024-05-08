@@ -5,7 +5,6 @@
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    max-width: fit-content;
 }
 
 /* 1st container *****************************************************  */
@@ -172,11 +171,6 @@
     background-color: transparent;
 }
 
-.boxing-01{
-    margin: 11px 25px;
-    border: 1px solid black;
-    border-radius: 14px;
-}
 .boxing-01 img {
     height: 250px;
     width: 270px;
