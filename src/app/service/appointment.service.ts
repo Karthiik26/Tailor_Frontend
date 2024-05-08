@@ -18,8 +18,7 @@ export class AppointmentService {
   }
 
   CancelAppointment(id:any, TailorId:any, AppointmentId:any ){
-    let data = localStorage.getItem('AdminLoggin');
-    let AdminId = data && JSON.parse(data)._id;
+    let AdminId = `65d39b492eb8902cd2166247`;
     return this.http.put(`https://tailor-backend-hqfi.onrender.com/CancelingAppointment/${AdminId}/${id}/${TailorId}/${AppointmentId}`,{});
   }
 

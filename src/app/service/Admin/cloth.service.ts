@@ -118,8 +118,7 @@ export class ClothService {
 
   // Payment
   // Payment Create order
-  AdminData : any = localStorage.getItem('AdminLoggin');
-  AdminId:any = this.AdminData && JSON.parse(this.AdminData)._id;
+  AdminId:any = `65d39b492eb8902cd2166247`;
   CreatingOrder(AddressId: any, PayementId:any, orderid:any, grandTotal: any) {
     const data = { AddressId, PayementId, orderid}
     return this.http.post(`https://tailor-backend-hqfi.onrender.com/CheckOutCartItems/CreateOrder/${this.UserId}/${this.AdminId}/${grandTotal}`, data);
@@ -139,8 +138,7 @@ export class ClothService {
 
   // Delivery msg
   DeliveryMsg(userId:any, OrderId:any){
-    let data = localStorage.getItem('AdminLoggin')
-    let data2 = data && JSON.parse(data)._id;
+    let data2 = `65d39b492eb8902cd2166247`;
     return this.http.post(`https://tailor-backend-hqfi.onrender.com/send/Delivery/message/${userId}/${OrderId}/${data2}`, {});
   }
 
