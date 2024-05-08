@@ -112,6 +112,8 @@
   min-height: 0px;
   justify-content: space-between;
   max-width: 1320px;
+  display: flex;
+  align-items: center;
 }
 
 .text-blk.info-block {
@@ -233,6 +235,10 @@
   padding-right: 50px;
   padding-bottom: 0px;
   padding-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .container-block {
