@@ -117,14 +117,10 @@
 }
 
 .text-blk.info-block {
-  width: 85%;
+  /* width: 85%; */
   height: auto;
   font-size: 18px;
   line-height: 30px;
-  margin-top: 30px;
-  margin-right: 0px;
-  margin-bottom: 50px;
-  margin-left: 0px;
   margin: 30px 0 30px 0;
 }
 

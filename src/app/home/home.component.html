@@ -79,11 +79,11 @@
 
 
 <!-- 3rd container -->
-<h2 class="text-center toptailor "> Our Top Tailors
+<h2 class="text-center toptailor " style="margin-top: 50px;" > Our Top Tailors
     With Specialist
 </h2>
 <!-- 2nd Container -->
-<div class="container w-100" id="container-02" style=" margin-bottom: 0px;">
+<div class="container w-100" id="container-02">
     <div class="content-inside-maintxt" style="font-weight: 600;">
         <div class="content-tailors">
             appointment scheduling with our top tailor specialists!
@@ -119,7 +119,7 @@
 
 <!-- 4th container -->
 <!-- 5th container -->
-<h2 class="text-center topdesigns" style="">Top Designs
+<h2 class="text-center toptailor" style="margin-top: 100px;">Top Designs
 </h2>
 <div class="container w-100" id="container-02" style=" margin-bottom: 0px;">
     <div class="content-inside-maintxt" style="font-weight: 600;">
@@ -141,7 +141,7 @@
         <!-- main content -->
         <div class="overflowing">
             <!-- item 01 -->
-            <div class="boxing-01" *ngFor="let data of ClothAdda.slice(0, 11)">
+            <div class="boxing-01" style="margin: 10px 12px;border: 1px solid black;border-radius: 12px; " *ngFor="let data of ClothAdda.slice(0, 11)">
                 <img (click)="GettingId(data.ClothId)" [src]="getImageSource(data.ClothImge)" alt="img" width="230px">
                 <div class="text-cont">
                     <h5 style="padding: 5px;font-weight: 500; ">{{data.ClothName}}</h5>

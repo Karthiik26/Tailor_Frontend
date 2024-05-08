@@ -11,9 +11,8 @@
     width: 138px;
     height: 45px;
     object-fit: cover;
-    /* display: block; */
     position: absolute;
-    top: 8px;
+    top: 13px;
     /* margin-top: 2px; */
     margin-left: 65px;
 }
@@ -24,7 +23,7 @@ li {
 }
 
 #navbarTogglerDemo03 {
-    margin-left: 120px;
+    margin-left: 230px;
 }
 
 ul {

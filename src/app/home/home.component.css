@@ -39,7 +39,7 @@
     margin-right: 0.1em;
     background-color: white;
     animation: blink 1s infinite;
-} 
+}
 
 .wrapper {
     /* margin-top: -300px; */
@@ -68,7 +68,7 @@
 
 /* 2nd container  **********************************************   */
 #container-02 {
-    height: 200px;
+    height: auto;
     margin-top: 20px;
 }
 
@@ -77,7 +77,7 @@
 #container-03 {
     height: auto;
     display: flex;
-    margin-top: 40px;
+    margin-top: -10px;
     margin-bottom: 30px;
 }
 
@@ -125,7 +125,7 @@
 /* 5th container *************************************************  */
 #container-05 {
     height: auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .side-btn {
@@ -155,7 +155,7 @@
 
 .overflowing {
     display: flex;
-    margin-top: 65px;
+    /* margin-top: 65px; */
     margin-bottom: 25px;
     flex-direction: row;
     overflow-x: scroll;
@@ -282,8 +282,8 @@
 }
 
 .toptailor {
-    margin-top: 70px;
-    margin-bottom: 60px;
+    /* margin-top: 70px; */
+    /* margin-bottom: 60px; */
     font-weight: 600;
     font-size: 40px;
 }
@@ -308,7 +308,7 @@
     padding: 20px;
     flex-direction: column;
     letter-spacing: 3px;
-} 
+}
 
 .content-appointment-2 {
     padding-left: 200px;
@@ -326,13 +326,20 @@
 }
 
 .content-tailors {
-    margin-top: -30px;
+    /* margin-top: -30px; */
     text-transform: capitalize;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .content-Cloths {
     text-transform: capitalize;
     margin-top: 10px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
+}
+
+@media screen and (min-width: 601px) and (max-width: 999px) {
+    * {
+        width: auto;
+    }
+
 }
