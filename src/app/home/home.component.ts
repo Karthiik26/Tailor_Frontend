@@ -80,11 +80,9 @@ export class HomeComponent implements OnInit {
       setTimeout(() => this.type(), this.typingDelay + 1100);
     }
   }
-
+  AdminId: any =`65d39b492eb8902cd2166247`;
   GettingOrdersDetails() {
-    let Data = localStorage.getItem('AdminLoggin');
-    let AdminId = Data && JSON.parse(Data)._id;
-    this.orders.GettingOrderDetails(AdminId).subscribe({
+    this.orders.GettingOrderDetails(this.AdminId).subscribe({
       next: (value: any) => {
         console.log("Getting Orders", value);
       }, error: (err) => {
@@ -104,11 +102,9 @@ export class HomeComponent implements OnInit {
   ClothAdda: any;
   ClothAdda2: any;
   ClothItemArray: any;
+
   FetchingClothArray() {
-    let localstorage = localStorage.getItem('AdminLoggin');
-    let AdminId = localstorage && JSON.parse(localstorage)._id;
-    console.log(AdminId);
-    this.clothservice.GettingCloth(AdminId).subscribe(
+    this.clothservice.GettingCloth(this.AdminId).subscribe(
       {
         next: (res) => {
           console.log(res);
