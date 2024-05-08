@@ -336,9 +336,7 @@ export class CheckoutProductsComponent implements OnInit {
         console.log("successfullyy Inserted In to db", value);
         this.clothservice.setGettingClothData(this.paymentId);
         this.clothservice.setGettingClothData2(this.orderid);
-        let data =localStorage.getItem('AdminLoggin');
-        let AdminId = data && JSON.parse(data)._id;
-        this.orderservice.GettingOrderDetails(AdminId);
+        this.orderservice.GettingOrderDetails(`65d39b492eb8902cd2166247`);
         this.router.navigate(['Thank-You']);
         this.GettingOrdersDetails();
       }, error: (err) => {
